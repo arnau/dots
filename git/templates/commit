@@ -1,0 +1,13 @@
+[Action] subject
+
+The commit message
+
+
+# Suggested actions:
+#
+# * Add: Something is beeing added
+# * Remove: Something is beeing removed
+# * Change: Something is beeing changed
+# * Fix [#] : The bug # is beeing fixed
+# * Merge: Some branch is beeing merged
+

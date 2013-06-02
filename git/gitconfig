@@ -1,0 +1,42 @@
+[user]
+  name = Arnau Siches
+  email = asiches@gmail.com
+
+[alias]
+  ci = commit
+  st = status -sb
+  co = checkout
+  b = branch
+  ls = ls-files
+  type = cat-file -t
+  dump = cat-file -p
+  viff = difftool -y -t vimdiff
+  gl = log --pretty=format:\"%C(red)%h%Creset %C(green)%ad%Creset | %s%C(yellow)%d%Creset %C(bold blue)[%an]%Creset\" --graph --date=short
+  dlog = log --oneline --decorate
+  loglive = !~/.dots/git/bin/git-loglive
+  treelive = !~/.dots/git/bin/git-treelive
+
+[merge]
+  tool = vimdiff
+  keepBackup = false
+
+[mergetool "vimdiff"]
+  cmd = vimdiff \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+  trustExitCode = true
+
+[color]
+  ui = true
+
+[core]
+  excludesfile = ~/.dots/git/gitignore
+  editor = vim
+  safecrlf = true
+  autocrlf = input
+  eol = lf
+
+[push]
+  default = tracking
+
+[commit]
+  template = ~/.dots/git/templates/commit
+
