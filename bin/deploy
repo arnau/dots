@@ -1,9 +1,21 @@
-#! /usr/bin/env bash
+#! /usr/bin/env ruby
 
-# FIXME
-dots="/home/vagrant/.dots"
+require 'fileutils'
 
-cd dots
-bundle install
-bundle exec puppet apply --modulepath=$dots/recipes/modules $dots/recipes/manifests/vagrant.pp
+env = ARGV.shift
+abort "Gimme an environment" if env.nil?
+
+env = env.to_sym
+
+environments = {
+  vagrant: {
+    dir: '/home/vagrant/.dots',
+    manifest: 'vagrant.pp'
+  }
+}
+
+FileUtils.cd(environments[env][:dir]) do
+  system 'bundle install'
+  system "bundle exec puppet apply --modulepath=#{environments[env][:dir]}/recipes/modules #{environments[env][:dir]}/recipes/manifests/#{environments[env][:manifest]}"
+end
 
