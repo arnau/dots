@@ -1,5 +1,9 @@
 $home = '/home/vagrant'
+$locale = 'en_US.UTF-8'
 
-#Exec['/bin', '/sbin', '/usr/bin']
+
+Exec {
+  path => ['/bin', '/usr/bin', '/usr/local/bin', '/usr/sbin']
+}
 
 class { dots: }
