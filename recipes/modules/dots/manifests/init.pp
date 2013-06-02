@@ -4,6 +4,10 @@ class dots {
     package { 'git': ensure => installed }
   }
 
+  if ! defined(Package['tig']) {
+    package { 'tig': ensure => installed }
+  }
+
   if ! defined(Package['vim-nox']) {
     package { 'vim-nox': ensure => installed }
   }
