@@ -48,8 +48,5 @@ setopt extendedglob
 export GEMEDITOR="vim"
 export EDITOR="vim"
 
-bindkey -v
-bindkey -M vicmd v edit-command-line
-
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
