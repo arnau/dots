@@ -19,6 +19,7 @@ zle -N zle-line-finish
 zle -N zle-keymap-select
 
 bindkey -v
+bindkey -M vicmd v edit-command-line
 
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
