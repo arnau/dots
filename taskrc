@@ -12,6 +12,8 @@
 
 # Files
 data.location=/kitchen/my/tasks
+dateformat=Y-M-DTH:N:SZ
+dateformat.report=Y-M-DTH:N:SZ
 
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
