@@ -66,7 +66,17 @@ class dots {
     owner => 'vagrant',
     group => 'vagrant',
     mode => 0640,
-    require => Package['tmux'],
+    require => Package['git'],
+  }
+
+  file { 'taskrc':
+    ensure => link,
+    path => "${home}/.taskrc",
+    target => "${home}/.dots/taskrc",
+    owner => 'vagrant',
+    group => 'vagrant',
+    mode => 0640,
+    require => Package['task'],
   }
 
 
