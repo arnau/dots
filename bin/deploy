@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+# FIXME
+dots="/home/vagrant/.dots"
+
+cd dots
+bundle install
+bundle exec puppet apply --modulepath=$dots/recipes/modules $dots/recipes/manifests/vagrant.pp
+
