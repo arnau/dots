@@ -41,7 +41,7 @@ class dots {
 
   file { 'zshrc':
     ensure => link,
-    path => "${home}/.bashrc",
+    path => "${home}/.zshrc",
     source => "${home}/.dots/zsh/zshrc",
     owner => 'vagrant',
     group => 'vagrant',
