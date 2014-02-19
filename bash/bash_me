@@ -1,0 +1,11 @@
+alias b='bundle exec'
+
+export EDITOR="vim"
+set -o vi
+
+# From: https://gist.github.com/871284e41058014863e0
+# https://wiki.archlinux.org/index.php/Color_Bash_Prompt
+parse_git_branch () {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/"
+}
+PS1="\[\e︎[1;33m\]︎★\u@\h\[\e[m\]:\[\e[0;34m\]\W\[\e[m\]\[\e[1;33m\]\$(parse_git_branch)\[\e[m\] \$ "
