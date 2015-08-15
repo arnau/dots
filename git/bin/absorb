@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+fail_if()
+{
+  if [ $1 -eq 1 ] ; then
+    exit 1
+  fi
+}
+
+target_branch=${1:-"master"}
+active_branch=`git rev-parse --abbrev-ref HEAD`
+
+git checkout $target_branch \
+  && fail_if $?
+
+git pull --quiet --rebase=preserve origin $target_branch \
+  && fail_if $?
+
+git checkout $active_branch \
+  && fail_if $?
+
+git rebase $target_branch \
+  && fail_if $?
+
+echo "Remember to force push:"
+echo "    git push -f origin $active_branch"
