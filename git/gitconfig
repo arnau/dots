@@ -18,7 +18,7 @@
   treelive = !~/.dots/git/bin/git-treelive
   pull = pull --rebase=preserve
   active = rev-parse --abbrev-ref HEAD
-  absorb = !~/.dots/git/bin/absorb
+  absorb = !~/.dots/git/bin/git-absorb.macos-x86_64
 
 [merge]
   tool = vimdiff
