@@ -3,7 +3,7 @@
   email = asiches@gmail.com
 
 [alias]
-  ci = commit
+  ci = commit -S
   st = status -sb
   co = checkout
   b = branch
@@ -11,10 +11,14 @@
   type = cat-file -t
   dump = cat-file -p
   viff = difftool -y -t vimdiff
-  gl = log --pretty=format:\"%C(red)%h%Creset %C(green)%ad%Creset | %s%C(yellow)%d%Creset %C(bold blue)[%an]%Creset\" --graph --date=short
+  gl = log --graph --date=short \
+    --pretty=format:\"%C(red)%h%Creset %C(green)%ad%Creset %s%C(yellow) %D%Creset %C(bold blue)%G? %aN <%ae>%Creset\"
   dlog = log --oneline --decorate
   loglive = !~/.dots/git/bin/git-loglive
   treelive = !~/.dots/git/bin/git-treelive
+  pull = pull --rebase=preserve
+  active = rev-parse --abbrev-ref HEAD
+  absorb = !~/.dots/git/bin/absorb
 
 [merge]
   tool = vimdiff
