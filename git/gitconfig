@@ -17,6 +17,8 @@
   loglive = !~/.dots/git/bin/git-loglive
   treelive = !~/.dots/git/bin/git-treelive
   pull = pull --rebase=preserve
+  rebase = rebase -S
+  merge = merge -S
   active = rev-parse --abbrev-ref HEAD
   absorb = !git-absorb
 
