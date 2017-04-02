@@ -71,7 +71,7 @@ alias fess='fzf --bind "enter:execute(less {})"'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # shellcheck source=/dev/null
-source "$HOME/git-completion.bash"
+source "/usr/local/opt/git/etc/bash_completion.d/git-completion.bash"
 
 git_branch() {
   git rev-parse --abbrev-ref HEAD 2>/dev/null
