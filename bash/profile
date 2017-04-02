@@ -1,74 +1,83 @@
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-alias ls='ls -hFG'
-alias ll='ls -l'
-alias la='ls -la'
-alias l='ls -CF'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias b='bundle exec'
-
-alias rake='rake -rubygems'
-alias irb="irb --readline -r irb/completion -r rubygems"
-alias mvimdiff="mvim -d"
-alias vim='/Applications/MacVim-snapshot-61/MacVim.app/Contents/MacOS/Vim'
-
-export PATH=/usr/local/bin:$PATH
-export MANPATH=/usr/local/man:$MANPATH
-export PATH=/usr/local/sbin:$PATH
-export MANPATH=/usr/local/man:$MANPATH
-
-LSCOLORS='dxfxcxdxDxegedabagDaad'
-export LSCOLORS
-
-JAVA_HOME=/Library/Java/Home
-export JAVA_HOME
-
-export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
-
-PATH=/usr/local/share/npm/bin:$PATH
-export PATH
-
-export GEMEDITOR="vim"
-export EDITOR="vim"
-export VIM_APP_DIR="/Applications/MacVim-snapshot-61/"
+#!/usr/bin/env bash
 
 set -o vi
 
-# From: https://gist.github.com/871284e41058014863e0
-# https://wiki.archlinux.org/index.php/Color_Bash_Prompt
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export GEMEDITOR='vim'
+export EDITOR='vim'
 
-parse_git_branch () {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/"
+# alias electron='/Applications/Electron.app/Contents/MacOS/Electron'
+alias irb='irb --readline -r irb/completion -r rubygems'
+alias ls='ls -hFG'
+alias scannet='arp -i en0 -a'
+alias serve='devd .'
+# alias serve='python -m SimpleHTTPServer'
+alias ssh='TERM=xterm ssh'
+alias vagrant='TERM=xterm vagrant'
+alias vault='vim /Volumes/vault/asiches/management/data/info.ttl'
+alias gpg='gpg2'
+
+
+###############################################################################
+# Paths
+###############################################################################
+JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME
+
+
+export RUST_PATH="$HOME/.cargo/bin"
+export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/"
+#export SYSROOT=/path/to/rustc/sysroot cargo install clippy
+
+export GOPATH=$HOME/gocode
+export GOBIN=$GOPATH/bin
+
+### Added by the Heroku Toolbelt
+export HEROKU_PATH='/usr/local/heroku/bin'
+
+OPENSSL_PATH='/usr/local/opt/openssl'
+export OPENSSL_INCLUDE_DIR=$OPENSSL_PATH/include
+export OPENSSL_LIB_DIR=$OPENSSL_PATH/lib
+
+export LOCAL_PATH=$HOME/bin
+export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+
+export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
+export PATH="$PATH:$LOCAL_PATH"
+export PATH="$PATH:$GOBIN"
+export PATH="$PATH:$HEROKU_PATH"
+export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="$PATH:$RUST_PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export MANPATH=/usr/local/man:$MANPATH
+
+
+###############################################################################
+# Sources
+###############################################################################
+
+# shellcheck source=/dev/null
+source "$HOME/.dots/bash/ps1.sh"
+# shellcheck source=/dev/null
+source "$HOME/.dots/bash/docker.sh"
+# shellcheck source=/dev/null
+source "$HOME/.dots/bash/secrets"
+
+alias fess='fzf --bind "enter:execute(less {})"'
+# shellcheck source=/dev/null
+[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+# shellcheck source=/dev/null
+source "$HOME/git-completion.bash"
+
+git_branch() {
+  git rev-parse --abbrev-ref HEAD 2>/dev/null
 }
-PS1="\[\e[1;34m\]\u@\h\[\e[m\]:\[\e[0;34m\]\W\[\e[m\]\[\e[1;33m\]\$(parse_git_branch)\[\e[m\] \$ "
 
-# achivements
-export PATH="$PATH:~/kitchen/learning/git-achievements"
-alias git="git-achievements"
-
-##functions
-extract () {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)  tar xjf $1    ;;
-      *.tar.gz) tar xzf $1    ;;
-      *.bz2)    bunzip2 $1    ;;
-      *.rar)    rar x $1    ;;
-      *.gz)   gunzip $1   ;;
-      *.tar)    tar xf $1   ;;
-      *.tbz2)   tar xjf $1    ;;
-      *.tgz)    tar xzf $1    ;;
-      *.zip)    unzip $1    ;;
-      *.Z)    uncompress $1 ;;
-      *)      echo "'$1' cannot be extracted via extract()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+# shellcheck source=/dev/null
+source "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
+# shellcheck source=/dev/null
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
