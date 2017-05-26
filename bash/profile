@@ -14,27 +14,23 @@ alias scannet='arp -i en0 -a'
 alias serve='devd .'
 # alias serve='python -m SimpleHTTPServer'
 alias ssh='TERM=xterm ssh'
-alias vagrant='TERM=xterm vagrant'
 alias vault='vim /Volumes/vault/asiches/management/data/info.ttl'
-alias gpg='gpg2'
+# alias gpg='gpg2'
 
 
 ###############################################################################
 # Paths
 ###############################################################################
-JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA_HOME
+# JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME
 
 
-export RUST_PATH="$HOME/.cargo/bin"
-export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/"
+# export RUST_PATH="$HOME/.cargo/bin"
+# export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/"
 #export SYSROOT=/path/to/rustc/sysroot cargo install clippy
 
-export GOPATH=$HOME/gocode
-export GOBIN=$GOPATH/bin
-
 ### Added by the Heroku Toolbelt
-export HEROKU_PATH='/usr/local/heroku/bin'
+# export HEROKU_PATH='/usr/local/heroku/bin'
 
 OPENSSL_PATH='/usr/local/opt/openssl'
 export OPENSSL_INCLUDE_DIR=$OPENSSL_PATH/include
@@ -49,7 +45,9 @@ export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HEROKU_PATH"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$RUST_PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
+# shellcheck source=/dev/null
+source ~/.cargo/env
 
 export MANPATH=/usr/local/man:$MANPATH
 
@@ -65,13 +63,14 @@ source "$HOME/.dots/bash/docker.sh"
 # shellcheck source=/dev/null
 source "$HOME/.dots/bash/secrets"
 
-alias fess='fzf --bind "enter:execute(less {})"'
 # shellcheck source=/dev/null
-[ -f "$HOME/.fzf.bash" ] && source "$HOME/.fzf.bash"
+[ -f /usr/local/etc/bash_completion.d/git-completion.bash ] && source /usr/local/etc/bash_completion.d/git-completion.bash
+# shellcheck source=/dev/null
+[ -f /usr/local/etc/bash_completion.d/tmux ] && source /usr/local/etc/bash_completion.d/tmux
+# shellcheck source=/dev/null
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-
-# shellcheck source=/dev/null
-source "/usr/local/opt/git/etc/bash_completion.d/git-completion.bash"
+alias fess='fzf --bind "enter:execute(less {})"'
 
 git_branch() {
   git rev-parse --abbrev-ref HEAD 2>/dev/null
@@ -79,5 +78,3 @@ git_branch() {
 
 # shellcheck source=/dev/null
 source "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
-# shellcheck source=/dev/null
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

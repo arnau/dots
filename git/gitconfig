@@ -1,26 +1,30 @@
 [user]
   name = Arnau Siches
   email = asiches@gmail.com
+  signingkey = 3316F53B
 
 [alias]
-  ci = commit -S
-  st = status -sb
-  co = checkout
+  active = rev-parse --abbrev-ref HEAD
   b = branch
-  ls = ls-files
-  type = cat-file -t
+  ci = commit -s
+  co = checkout
+  dlog = log --oneline --decorate
   dump = cat-file -p
-  viff = difftool -y -t vimdiff
+  fiff = diff --name-status
+  flog = log --name-status --oneline
+  fuzzlog = !git log --oneline --shortstat --quiet | fzf -e
   gl = log --graph --date=short \
     --pretty=format:\"%C(red)%h%Creset %C(green)%ad%Creset %s%C(yellow) %D%Creset %C(bold blue)%G? %aN <%ae>%Creset\"
-  dlog = log --oneline --decorate
   loglive = !~/.dots/git/bin/git-loglive
-  treelive = !~/.dots/git/bin/git-treelive
+  ls = ls-files
+  lst = diff-tree --no-commit-id --name-only -r
+  merge = merge -s
   pull = pull --rebase=preserve
-  rebase = rebase -S
-  merge = merge -S
-  active = rev-parse --abbrev-ref HEAD
-  absorb = !git-absorb
+  rebase = rebase -s
+  st = status -sb
+  treelive = !~/.dots/git/bin/git-treelive
+  type = cat-file -t
+  viff = difftool -y -t vimdiff
 
 [merge]
   tool = vimdiff
@@ -44,5 +48,7 @@
   default = tracking
 
 [commit]
-  template = ~/.dots/git/templates/commit
+  gpgsign = true
 
+[gpg]
+  program = /usr/local/bin/gpg
