@@ -9,7 +9,8 @@ export EDITOR='vim'
 
 # alias electron='/Applications/Electron.app/Contents/MacOS/Electron'
 alias irb='irb --readline -r irb/completion -r rubygems'
-alias ls='ls -hFG'
+# alias ls='ls -hFG'
+alias ls=exa
 alias scannet='arp -i en0 -a'
 alias serve='devd .'
 # alias serve='python -m SimpleHTTPServer'
