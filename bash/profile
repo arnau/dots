@@ -79,3 +79,4 @@ git_branch() {
 
 # shellcheck source=/dev/null
 source "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
+if [ -e /Users/arnau/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/arnau/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
