@@ -31,6 +31,6 @@ DOCKER_PATH='/Applications/Docker.app/Contents/Resources/etc'
 # shellcheck source=/dev/null
 source "$DOCKER_PATH/docker.bash-completion"
 # shellcheck source=/dev/null
-source "$DOCKER_PATH/docker-machine.bash-completion"
+# source "$DOCKER_PATH/docker-machine.bash-completion"
 # shellcheck source=/dev/null
 source "$DOCKER_PATH/docker-compose.bash-completion"
