@@ -16,6 +16,7 @@ alias serve='devd .'
 # alias serve='python -m SimpleHTTPServer'
 alias ssh='TERM=xterm ssh'
 alias vault='vim /Volumes/vault/asiches/management/data/info.ttl'
+alias bookmarks='vim /Volumes/vault/bookmarks/buffer.txt'
 # alias gpg='gpg2'
 
 
