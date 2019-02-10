@@ -19,7 +19,7 @@ alias ssh='TERM=xterm ssh'
 alias vault='vim /Volumes/vault/asiches/management/data/info.ttl'
 alias bookmarks='vim ~/kitchen/bookmarks/buffer.txt'
 # alias gpg='gpg2'
-alias pasifae='PASSWORD_STORE_DIR=~/.pasifae-pass pass'
+alias pasifae='PASSWORD_STORE_DIR=/keybase/team/pasifae/.pasifae-store pass'
 
 ###############################################################################
 # Paths
