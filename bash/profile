@@ -19,17 +19,13 @@ alias ssh='TERM=xterm ssh'
 alias vault='vim /Volumes/vault/asiches/management/data/info.ttl'
 alias bookmarks='vim ~/kitchen/bookmarks/buffer.txt'
 # alias gpg='gpg2'
+alias pasifae='PASSWORD_STORE_DIR=~/.pasifae-pass pass'
 
 ###############################################################################
 # Paths
 ###############################################################################
 # JAVA_HOME=$(/usr/libexec/java_home)
 # export JAVA_HOME
-
-
-# export RUST_PATH="$HOME/.cargo/bin"
-# export RUST_SRC_PATH="$HOME/.multirust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/"
-#export SYSROOT=/path/to/rustc/sysroot cargo install clippy
 
 ### Added by the Heroku Toolbelt
 # export HEROKU_PATH='/usr/local/heroku/bin'
@@ -51,6 +47,7 @@ export PATH="$PATH:$RUST_PATH"
 # export PATH="$HOME/.cargo/bin:$PATH"
 # shellcheck source=/dev/null
 source ~/.cargo/env
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export MANPATH=/usr/local/man:$MANPATH
 
@@ -84,18 +81,6 @@ git_branch() {
   git rev-parse --abbrev-ref HEAD 2>/dev/null
 }
 
-# Load the custom .*-pass I have
-for i in ~/.*-pass; do
-  [ -e $i/.load.bash ] && . $i/.load.bash
-done
-export PASSWORD_STORE_DIR=~/.registers-pass
-
 # shellcheck source=/dev/null
 source "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
 if [ -e /Users/arnau/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/arnau/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/arnau/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/arnau/Downloads/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/arnau/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/arnau/Downloads/google-cloud-sdk/completion.bash.inc'; fi
