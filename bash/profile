@@ -64,13 +64,6 @@ source "$HOME/.dots/bash/ps1.sh"
 source "$HOME/.dots/bash/docker.sh"
 # shellcheck source=/dev/null
 
-if [ -n "$SECRETS_READY" ]
-then
-  echo "skipping secrets"
-else
-  source "$HOME/.dots/bash/secrets"
-fi
-
 # shellcheck source=/dev/null
 [ -f /usr/local/etc/bash_completion.d/git-completion.bash ] && source /usr/local/etc/bash_completion.d/git-completion.bash
 # shellcheck source=/dev/null
