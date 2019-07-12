@@ -38,7 +38,7 @@ export LOCAL_PATH=$HOME/bin
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
-export PATH="$PATH:$LOCAL_PATH"
+export PATH="$PATH:$LOCAL_PATH:$HOME/Library/Python/3.7/bin"
 export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HEROKU_PATH"
@@ -72,6 +72,10 @@ source "$HOME/.dots/bash/docker.sh"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 alias fess='fzf --bind "enter:execute(less {})"'
+
+# Wasmer
+export WASMER_DIR="$HOME/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
 
 # shellcheck source=/dev/null
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
