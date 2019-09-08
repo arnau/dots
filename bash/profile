@@ -16,7 +16,6 @@ alias scannet='arp -i en0 -a'
 alias serve='devd .'
 # alias serve='python -m SimpleHTTPServer'
 alias ssh='TERM=xterm ssh'
-alias vault='vim /Volumes/vault/asiches/management/data/info.ttl'
 alias bookmarks='vim ~/kitchen/bookmarks/buffer.txt'
 # alias gpg='gpg2'
 alias pasifae='PASSWORD_STORE_DIR=/keybase/team/pasifae/.pasifae-store pass'
@@ -43,11 +42,8 @@ export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HEROKU_PATH"
 export PATH="$PATH:$JAVA_HOME/bin"
-export PATH="$PATH:$RUST_PATH"
-# export PATH="$HOME/.cargo/bin:$PATH"
 # shellcheck source=/dev/null
 source ~/.cargo/env
-export PATH="$HOME/.cargo/bin:$PATH"
 
 export MANPATH=/usr/local/man:$MANPATH
 
@@ -75,14 +71,11 @@ alias fess='fzf --bind "enter:execute(less {})"'
 
 # Wasmer
 export WASMER_DIR="$HOME/.wasmer"
+# shellcheck source=/dev/null
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
 
 # shellcheck source=/dev/null
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
-git_branch() {
-  git rev-parse --abbrev-ref HEAD 2>/dev/null
-}
 
 # shellcheck source=/dev/null
 source "$HOME/.opam/opam-init/init.sh" > /dev/null 2> /dev/null || true
