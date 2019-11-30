@@ -17,6 +17,8 @@ alias serve='devd .'
 # alias serve='python -m SimpleHTTPServer'
 alias ssh='TERM=xterm ssh'
 alias bookmarks='vim ~/kitchen/bookmarks/buffer.txt'
+alias mam='cd ~/kitchen/cellar/mam'
+alias weeknum='date +%V'
 # alias gpg='gpg2'
 alias pasifae='PASSWORD_STORE_DIR=/keybase/team/pasifae/.pasifae-store pass'
 
