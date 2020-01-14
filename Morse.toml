@@ -1,0 +1,13 @@
+# dots dependencies.
+
+[dependencies]
+bash = "5"
+docker = "*"
+fzf = "*"
+git = "2"
+opam = "2.0.5"
+openssl = "*"
+pass = { source = "https://github.com/zx2c4/password-store", vcs = "git" }
+rustup = "*"
+tmux = "*"
+vim = "8"
