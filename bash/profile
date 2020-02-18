@@ -20,6 +20,7 @@ alias cellar='cd ~/kitchen/cellar'
 alias weeknum='date +%V'
 # alias gpg='gpg2'
 alias pasifae='PASSWORD_STORE_DIR=/keybase/team/pasifae/.pasifae-store pass'
+alias fzfpid="ps -ef | sed 1d | fzf -m --header='[pid:process]' | awk '{print \$2}'"
 
 ###############################################################################
 # Paths
