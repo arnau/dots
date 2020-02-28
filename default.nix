@@ -33,5 +33,6 @@ with (import <nixpkgs> {});
     pijul
     #racket
     swiProlog
+    tealdeer
   ;
 }
