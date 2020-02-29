@@ -19,6 +19,7 @@ with (import <nixpkgs> {});
     editorconfig-core-c
     fd
     fossil
+    gnused
     jq
     mercurial
     neovim
@@ -34,6 +35,6 @@ with (import <nixpkgs> {});
     #racket
     swiProlog
     tealdeer
-    gnused
+    time
   ;
 }
