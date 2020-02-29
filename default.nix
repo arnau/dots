@@ -34,5 +34,6 @@ with (import <nixpkgs> {});
     #racket
     swiProlog
     tealdeer
+    gnused
   ;
 }
