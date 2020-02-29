@@ -24,6 +24,10 @@ alias snip='tldr $(tldr --list | tr , "\n" | fzf)'
 alias fzfpid="ps -ef | sed 1d | fzf -m --header='[pid:process]' | awk '{print \$2}'"
 alias time="$(which time)"
 
+function lf {
+  ls $1 | fzf
+}
+
 ###############################################################################
 # Paths
 ###############################################################################
