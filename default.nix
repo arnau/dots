@@ -11,7 +11,7 @@ let
   # ];
   stable = [
     # pkgs.neovim
-    # pkgs.neovim-unwrapped
+    # pkgs.luajitPackages.luv
     pkgs.bat                 # cat replacement.
     pkgs.direnv
     pkgs.dos2unix            # handle line breaks from DOS.
