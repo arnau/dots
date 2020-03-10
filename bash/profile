@@ -21,11 +21,11 @@ alias weeknum='date +%V'
 # alias gpg='gpg2'
 alias pasifae='PASSWORD_STORE_DIR=/keybase/team/pasifae/.pasifae-store pass'
 alias snip='tldr $(tldr --list | tr , "\n" | fzf)'
-alias fzfpid="ps -ef | sed 1d | fzf -m --header='[pid:process]' | awk '{print \$2}'"
+alias skpid="ps -ef | sed 1d | sk -m --header='[pid:process]' | awk '{print \$2}'"
 alias time="$(which time)"
 
 function lf {
-  ls $1 | fzf
+  ls $1 | sk
 }
 
 ###############################################################################

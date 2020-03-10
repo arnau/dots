@@ -13,6 +13,7 @@ let
     # pkgs.neovim
     # pkgs.luajitPackages.luv
     pkgs.bat                 # cat replacement.
+    pkgs.devd
     pkgs.direnv
     pkgs.dos2unix            # handle line breaks from DOS.
     pkgs.editorconfig-core-c # configure editor per project.
@@ -26,6 +27,7 @@ let
     pkgs.pandoc              # transform document formats.
     pkgs.pass                # manage passwords.
     pkgs.ripgrep             # grep replacement.
+    pkgs.skim                # fuzzy finder.
     pkgs.tealdeer            # man replacement.
     pkgs.time                # macos time is ancient.
     pkgs.tokei               # count code.
