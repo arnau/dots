@@ -20,23 +20,17 @@ alias cellar='cd ~/kitchen/cellar'
 alias weeknum='date +%V'
 # alias gpg='gpg2'
 alias pasifae='PASSWORD_STORE_DIR=/keybase/team/pasifae/.pasifae-store pass'
-alias snip='tldr $(tldr --list | tr , "\n" | fzf)'
+alias snip='tldr $(tldr --list | tr , "\n" | sk)'
 alias skpid="ps -ef | sed 1d | sk -m --header='[pid:process]' | awk '{print \$2}'"
 alias time="$(which time)"
 
 function lf {
-  ls $1 | sk
+  ls "$1" | sk
 }
 
 ###############################################################################
 # Paths
 ###############################################################################
-# JAVA_HOME=$(/usr/libexec/java_home)
-# export JAVA_HOME
-
-### Added by the Heroku Toolbelt
-# export HEROKU_PATH='/usr/local/heroku/bin'
-
 OPENSSL_PATH='/usr/local/opt/openssl'
 export OPENSSL_INCLUDE_DIR=$OPENSSL_PATH/include
 export OPENSSL_LIB_DIR=$OPENSSL_PATH/lib
