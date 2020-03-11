@@ -22,6 +22,7 @@ let
     pkgs.fossil              # sqlite-based VCS.
     pkgs.git                 # main VCS.
     pkgs.gnused              # macos sed is ancient.
+    pkgs.hyperfine           # time replacement.
     pkgs.jq                  # operate on JSON.
     pkgs.mercurial           # another VCS.
     pkgs.pandoc              # transform document formats.
