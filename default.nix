@@ -27,12 +27,14 @@ let
     pkgs.mercurial           # another VCS.
     pkgs.pandoc              # transform document formats.
     pkgs.pass                # manage passwords.
+    pkgs.pastel              # manipulate colours.
     pkgs.ripgrep             # grep replacement.
     pkgs.skim                # fuzzy finder.
     pkgs.tealdeer            # man replacement.
     pkgs.time                # macos time is ancient.
     pkgs.tokei               # count code.
     pkgs.xsv                 # operate on CSV, TSV.
+    pkgs.ytop                # top replacement.
   ];
   experimental = [
     #pkgs.pijul
