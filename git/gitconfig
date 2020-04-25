@@ -5,6 +5,7 @@
 
 [alias]
   active = rev-parse --abbrev-ref HEAD
+  amend = ci --amend
   b = branch
   ci = commit -s
   co = checkout
