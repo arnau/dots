@@ -40,6 +40,7 @@ let
     #pkgs.pijul
     #pkgs.racket
     #pkgs.swiProlog
+    pkgs.gitAndTools.delta
   ];
 
   # The full list of inputs to install

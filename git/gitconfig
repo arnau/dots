@@ -44,6 +44,10 @@
   safecrlf = true
   autocrlf = input
   eol = lf
+  pager = delta --plus-color="#012800" --minus-color="#440001"
+
+[interactive]
+  diffFilter = delta --color-only
 
 [push]
   default = tracking
