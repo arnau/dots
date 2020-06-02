@@ -9,3 +9,7 @@ list:
 
 gen:
 	@nix-env --list-generations
+
+setup:
+	ln -s ~/.dots/zshrc ~/.zshrc
+	ln -s ~/.dots/inputrc ~/.inputrc
