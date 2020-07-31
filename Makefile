@@ -2,6 +2,7 @@ install:
 	nix-env -f . -i
 
 update:
+	nix-channel --update
 	nix-env -f . -u
 
 list:
