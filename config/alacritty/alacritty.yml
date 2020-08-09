@@ -375,7 +375,7 @@ colors:
   # Record all characters and escape sequences as test data.
   #ref_test: false
 
-#mouse:
+mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
@@ -387,7 +387,7 @@ colors:
   # If this is `true`, the cursor is temporarily hidden when typing.
   #hide_when_typing: false
 
-  #url:
+  url:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.
@@ -399,8 +399,8 @@ colors:
     #   - (macOS) open
     #   - (Linux) xdg-open
     #   - (Windows) explorer
-    #launcher:
-    #  program: xdg-open
+    launcher:
+      program: open
     #  args: []
 
     # URL modifiers
@@ -530,7 +530,23 @@ colors:
 # binding with the same triggers is defined. To unset a default binding, it can
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
 # a no-op if you do not wish to receive input characters for that binding.
-#key_bindings:
+key_bindings:
+  # SEE: https://github.com/jwilm/alacritty/issues/93
+  - { key: Return, mods: Command, action: ToggleFullscreen }
+  - { key: F,      mods: Alt,     chars: "\x1bf"           }
+  - { key: B,      mods: Alt,     chars: "\x1bb"           }
+  - { key: Key0,   mods: Alt,     chars: "º"               }
+  - { key: Key1,   mods: Alt,     chars: "¡"               }
+  - { key: Key2,   mods: Alt,     chars: "€"               }
+  - { key: Key3,   mods: Alt,     chars: "#"               }
+  - { key: Key4,   mods: Alt,     chars: "¢"               }
+  - { key: Key5,   mods: Alt,     chars: "∞"               }
+  - { key: Key6,   mods: Alt,     chars: "§"               }
+  - { key: Key7,   mods: Alt,     chars: "¶"               }
+  - { key: Key8,   mods: Alt,     chars: "•"               }
+  - { key: Key9,   mods: Alt,     chars: "ª"               }
+
+
   # (Windows/Linux only)
   #- { key: V,        mods: Control|Shift, action: Paste            }
   #- { key: C,        mods: Control|Shift, action: Copy             }
@@ -555,6 +571,7 @@ colors:
   #- { key: Q,      mods: Command,         action: Quit             }
   #- { key: W,      mods: Command,         action: Quit             }
   #- { key: F,      mods: Command|Control, action: ToggleFullscreen }
+
 
   #- { key: Paste,                    action: Paste                            }
   #- { key: Copy,                     action: Copy                             }
