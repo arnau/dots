@@ -9,9 +9,8 @@ setopt CORRECT
 #
 autoload -Uz compinit
 compinit
-exists() { [ ! -z `which "$1"` ]; }
 
-if exists kitty; then
+if hash kitty 2>/dev/null; then
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 fi
