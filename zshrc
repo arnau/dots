@@ -9,6 +9,12 @@ setopt CORRECT
 #
 autoload -Uz compinit
 compinit
+exists() { [ ! -z `which "$1"` ]; }
+
+if exists kitty; then
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+fi
 
 source "$HOME/.dots/zsh/aliases.zsh"
 source "$HOME/.dots/zsh/docker.zsh"

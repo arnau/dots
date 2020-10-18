@@ -13,4 +13,5 @@ gen:
 
 setup:
 	ln -s ~/.dots/zshrc ~/.zshrc
-	ln -s ~/.dots/inputrc ~/.inputrc
+	cp -R ~/.dots/config/alacritty ~/.config/
+	cp -R ~/.dots/config/kitty ~/.config/
