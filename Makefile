@@ -15,3 +15,6 @@ setup:
 	ln -s ~/.dots/zshrc ~/.zshrc
 	cp -R ~/.dots/config/alacritty ~/.config/
 	cp -R ~/.dots/config/kitty ~/.config/
+
+slurp-state:
+	cp ~/.config/kitty/kitty.conf config/kitty/
