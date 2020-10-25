@@ -4,11 +4,11 @@ startup = [
   "alias now [] { date format \"%Y-%m-%dT%H:%M%z\" }",
   "alias icat [pth] { kitty +kitten icat $pth }",
   "config set env.SHELL $nu.env._",
-  "config set env.STARSHIP_SHELL $nu.env._",
   "config set env.STARSHIP_CONFIG $(echo $nu.env.HOME .dots/starship.toml | str collect '/')",
   ]
 
 [env]
+STARSHIP_SHELL = "nu"
 COLORTERM = "truecolor"
 FZF_DEFAULT_COMMAND = "rg --files --hidden --follow --glob \"!.git/*\""
 LANG = "en_GB.UTF-8"
