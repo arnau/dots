@@ -1,0 +1,31 @@
+format = """
+$env_var\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$hg_branch\
+$nix_shell\
+$line_break\
+$character"""
+
+[character]
+success_symbol = "[•](bold green)"
+error_symbol = "[?](bold red)"
+
+[env_var]
+variable = "STARSHIP_SHELL"
+default = "xxx"
+format = "[$env_value]($style) "
+style = "bold purple"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "bold yellow"
+
+[hg_branch]
+format = "[hg~$branch]($style) "
+style = "bold #ff69b4"
+
+[nix_shell]
+format = '[nix~$state(\($name\))]($style)'
