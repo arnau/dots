@@ -21,6 +21,7 @@
   ls = ls-files
   lst = diff-tree --no-commit-id --name-only -r
   merge = merge -s
+  puff = push --force-with-lease
   pull = pull --rebase=preserve
   rebase = rebase -s
   st = status -sb
