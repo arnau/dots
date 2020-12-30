@@ -7,6 +7,7 @@ setopt CORRECT
 # % rm -f ~/.zcompdump
 # % compinit
 #
+fpath+=~/.config/zfunc
 autoload -Uz compinit
 compinit
 
@@ -19,3 +20,10 @@ source "$HOME/.dots/zsh/aliases.zsh"
 source "$HOME/.dots/zsh/docker.zsh"
 source "$HOME/.dots/zsh/profile.zsh"
 source "$HOME/.dots/zsh/prompt.zsh"
+
+# tab multiplexer configuration: https://github.com/austinjones/tab-rs/
+source "/Users/arnau/Library/Application Support/tab/completion/zsh-history.zsh"
+# end tab configuration
+
+
+source /Users/arnau/.config/broot/launcher/bash/br
