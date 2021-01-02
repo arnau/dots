@@ -25,7 +25,7 @@ let
     pkgs.hyperfine           # time replacement.
     pkgs.jq                  # operate on JSON.
     pkgs.mdcat               # markdown display
-    pkgs.mercurial           # another VCS.
+    # pkgs.mercurial           # another VCS.
     pkgs.pandoc              # transform document formats.
     pkgs.pass                # manage passwords.
     pkgs.pastel              # manipulate colours.
