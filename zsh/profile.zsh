@@ -1,5 +1,8 @@
 LOCAL_PATH="$HOME/bin"
 
+export EDITOR="vim"
+export PAGER="less"
+
 # OpenSSL
 OPENSSL_PATH="/usr/local/opt/openssl"
 export OPENSSL_INCLUDE_DIR="$OPENSSL_PATH/include"
