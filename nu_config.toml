@@ -1,8 +1,7 @@
 edit_mode = "vi"
 prompt = "echo $(starship prompt)"
 startup = [
-  "alias now [] { date format \"%Y-%m-%dT%H:%M%z\" }",
-  "alias icat [pth] { kitty +kitten icat $pth }",
+  "alias icat = kitty +kitten icat",
   "config set env.SHELL $nu.env._",
   "config set env.STARSHIP_CONFIG $(echo $nu.env.HOME .dots/starship.toml | str collect '/')",
   ]
