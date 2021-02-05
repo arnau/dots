@@ -1,6 +1,11 @@
 install:
 	nix-env -f . -i
 
+install-asdf:
+	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+	mkdir -p ~/.config/fish/completions
+	cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+
 update:
 	nix-channel --update
 	nix-env -f . -u
