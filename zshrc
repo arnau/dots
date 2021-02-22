@@ -22,7 +22,7 @@ source "$HOME/.dots/zsh/profile.zsh"
 source "$HOME/.dots/zsh/prompt.zsh"
 
 # tab multiplexer configuration: https://github.com/austinjones/tab-rs/
-source "$HOME/Application Support/tab/completion/zsh-history.zsh"
+source "$HOME/Library/Application Support/tab/completion/zsh-history.zsh"
 # end tab configuration
 
 source "$HOME/.config/broot/launcher/bash/br"
