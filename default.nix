@@ -1,5 +1,7 @@
 let
-  pkgs = import <nixpkgs> {};
+  sources = import ./nix/sources.nix { };
+  pkgs = import sources.nixpkgs { };
+  # pkgs = import <nixpkgs> {};
   # brew = [
   #   # bash_5
   #   # git
