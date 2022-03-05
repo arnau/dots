@@ -1,6 +1,6 @@
 LOCAL_PATH="$HOME/bin"
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export PAGER="less"
 
 # OpenSSL

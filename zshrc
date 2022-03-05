@@ -25,7 +25,4 @@ source "$HOME/.dots/zsh/prompt.zsh"
 source "$HOME/Library/Application Support/tab/completion/zsh-history.zsh"
 # end tab configuration
 
-source "$HOME/.config/broot/launcher/bash/br"
 source "$HOME/.asdf/asdf.sh"
-
-source "$HOME/.config/broot/launcher/bash/br"
