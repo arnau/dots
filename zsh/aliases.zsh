@@ -1,3 +1,4 @@
+alias vim=nvim
 alias ls=exa
 alias tree='exa -Tl'
 alias scannet='arp -i en0 -a'
