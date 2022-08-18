@@ -1,6 +1,8 @@
 setopt NO_CASE_GLOB
 setopt GLOB_COMPLETE
 setopt CORRECT
+setopt interactivecomments
+bindkey "^Q" push-input
 
 # Rebuild index
 #
@@ -26,3 +28,7 @@ source "$HOME/Library/Application Support/tab/completion/zsh-history.zsh"
 # end tab configuration
 
 source "$HOME/.asdf/asdf.sh"
+
+# Wasmer
+export WASMER_DIR="/Users/arnau/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
