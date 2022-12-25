@@ -32,3 +32,6 @@ source "$HOME/.asdf/asdf.sh"
 # Wasmer
 export WASMER_DIR="/Users/arnau/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# Created by `pipx` on 2022-12-25 08:54:00
+export PATH="$PATH:/Users/arnau/.local/bin"
