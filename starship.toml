@@ -1,3 +1,5 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
 format = """
 $env_var\
 $directory\
@@ -12,10 +14,13 @@ $character"""
 [character]
 success_symbol = "[•](bold green)"
 error_symbol = "[?](bold red)"
+vimcmd_symbol = "[N](bold green)"
+vimcmd_replace_one_symbol = "[R](bold pink)"
+vimcmd_replace_symbol = "[R](bold pink)"
+vimcmd_visual_symbol = "[V](bold yellow)"
 
-[env_var]
-variable = "STARSHIP_SHELL"
-default = "xxx"
+[env_var.STARSHIP_SHELL]
+default = "???"
 format = "[$env_value]($style) "
 style = "bold purple"
 
