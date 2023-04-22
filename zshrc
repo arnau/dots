@@ -15,6 +15,7 @@ compinit
 
 source "$HOME/.dots/zsh/aliases.zsh"
 source "$HOME/.dots/zsh/docker.zsh"
+source "$HOME/.dots/zsh/key-bindings.zsh"
 source "$HOME/.dots/zsh/profile.zsh"
 source "$HOME/.dots/zsh/prompt.zsh"
 

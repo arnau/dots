@@ -28,12 +28,10 @@ source ~/.cargo/env
 # Grep
 [ -d /usr/local/opt/grep/libexec/gnubin ] && PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+# Skim
+export SKIM_DEFAULT_COMMAND='rg --color=always --files --hidden --follow --glob "!.git/*"'
+# sk --ansi -i -c 'rg --color=always --line-number "{}"'
 
 # Wasmer
 export WASMER_DIR="$HOME/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
-
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
