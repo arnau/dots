@@ -1,0 +1,42 @@
+theme = "rosedragon"
+#theme = "ferra"
+
+[editor]
+line-number = "relative"
+cursorline = true
+bufferline = "never"
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type", "version-control"]
+
+[editor.soft-wrap]
+enable = true
+#wrap-indicator = "… "
+wrap-indicator = "· "
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.indent-guides]
+render = false
+
+
+
+[keys.insert]
+j = { k = "normal_mode" }
+
+[keys.normal.g]
+a = "code_action"

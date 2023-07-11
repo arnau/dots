@@ -35,3 +35,9 @@ export SKIM_DEFAULT_COMMAND='rg --color=always --files --hidden --follow --glob 
 # Wasmer
 export WASMER_DIR="$HOME/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
+
+# Rye (Python)
+export PATH="$HOME/.rye:$PATH"
+
+# RTX (alt asdf)
+eval "$($HOME/.cargo/bin/rtx activate zsh)"

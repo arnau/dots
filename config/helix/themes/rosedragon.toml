@@ -1,0 +1,177 @@
+attribute = "navajowhite"
+string = "powderblue-grey"
+
+keyword = "wheat"
+"keyword.directive" = { fg = "powderblue", modifiers = ["dim"] }
+"keyword.control.conditional" = { fg = "powderblue", modifiers = ["dim"] }
+"keyword.control.repeat" = { fg = "powderblue", modifiers = ["dim"] }
+"keyword.function" = { fg = "powderblue", modifiers = ["dim"] }
+"keyword.storage.modifier.ref" = { fg = "hotpink", modifiers = []}
+"keyword.special" = "hotpink"
+
+namespace = "pink"
+
+punctuation = "navajowhite"
+"punctuation.delimiter" = "navajowhite"
+"punctuation.bracket" = "navajowhite"
+
+operator = "navajowhite"
+special = "navajowhite"
+
+variable = "pink"
+"variable.other.member" = "pink"
+"variable.parameter" = "pink"
+"variable.builtin" = "navajowhite"
+
+type = "powderblue"
+"type.builtin" = { fg = "powderblue", modifiers = ["dim"] }
+"type.enum.variant" = { fg = "powderblue", modifiers = ["dim"] }
+
+constructor = "pink"
+
+function = "navajowhite"
+"function.macro" = { fg = "mistyrose", modifiers = ["italic"] }
+"function.builtin" = "navajowhite"
+"function.method" = "navajowhite"
+
+tag = "pink"
+
+comment = "burlywood-tamed"
+
+constant = "pink"
+"constant.builtin" = "pink"
+"constant.builtin.boolean" = "violet"
+"constant.numeric" = "lightsalmon-light"
+"number" = "lightsalmon-light"
+"constant.character" = "darkkhaki"
+"constant.character.escape" = "pink"
+
+label = "pink"
+
+"markup.heading" = "pink"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "grey" }
+"markup.link.text" = "powderblue"
+"markup.raw" = "white"
+
+"diff.plus" = "deep_green"
+"diff.minus" = "deep_rosybrown"
+"diff.delta" = "deep_grey"
+
+"ui.background" = { bg = "black" }
+"ui.background.separator" = { fg = "white" }
+"ui.linenr" = { fg = "dimgrey" }
+"ui.linenr.selected" = { fg = "pink" }
+"ui.statusline" = { fg = "grey", bg = "darkgrey" }
+"ui.statusline.inactive" = { fg = "dimgrey", bg = "darkgrey" }
+"ui.popup" = { bg = "darkgrey" }
+"ui.window" = { fg = "dimgrey" }
+"ui.help" = { bg = "darkgrey", fg = "navajowhite" }
+
+"ui.text" = { fg = "white" }
+"ui.text.focus" = { fg = "deep_white" }
+"ui.text.inactive" = "grey"
+
+"ui.virtual" = { fg = "navajowhite" }
+"ui.virtual.indent-guide" = { fg = "darkgrey" }
+
+"ui.selection" = { bg = "darkgrey" }
+"ui.selection.primary" = { bg = "deep_black" }
+"ui.cursor.select" = { modifiers = ["reversed"] }
+"ui.cursor.insert" = { modifiers = ["reversed"] }
+"ui.cursor.match" = { fg = "hotpink", modifiers = ["bold"]}
+"ui.cursor" = { modifiers = ["reversed"] }
+"ui.cursorline.primary" = { bg = "darkgrey" }
+# TODO: check
+"ui.highlight" = { bg = "deep_black", modifiers = [] }
+"ui.highlight.frameline" = { bg = "#634450" }
+"ui.debug" = { fg = "#634450" }
+"ui.debug.breakpoint" = { fg = "deep_pink" }
+"ui.menu" = { fg = "grey", bg = "darkgrey" }
+"ui.menu.selected" = { fg = "darkgrey", bg = "white" }
+"ui.menu.scroll" = { fg = "green", bg = "blue" }
+
+"diagnostic.hint" = { underline = { color = "grey", style = "curl" } }
+"diagnostic.info" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "deep_yellow", style = "curl" } }
+"diagnostic.error" = { underline = { color = "orange", style = "curl" } }
+
+warning = "deep_yellow"
+error = "orange"
+info = "pink"
+hint = "grey"
+
+[palette]
+black = "#252525"
+blue = "#99bbdd"
+brown = "#be9873"
+cyan = "#99ddee"
+darkgrey = "#333333"
+green = "#99bb99"
+grey = "#cccccc"
+lime = "#dedd99"
+orange = "#ffaa77"
+purple = "#dda0dd"
+rosybrown = "#bc8f8f"
+salmon = "#ffbb99"
+white = "#d9d9d9"
+yellow = "#ffdd99"
+
+# Brown
+burlywood = "#deb887"
+burlywood-tamed = "#958675"
+tan = "#d2b48c"
+sandybrown = "#f4a460"
+lightsalmon = "#ffa07a"
+lightsalmon-light = "#ffae85"
+
+# Green
+khaki = "#f0e68c"
+palegreen = "#98fb98"
+darkseagreen = "#99bb99"
+darkkhaki = "#bdb76b"
+
+# Yellow
+navajowhite = "#ffdead"
+wheat = "#f5deb3"
+gold = "#ffd700"
+goldenrod-light = "#ebc975" # lighten 0.2
+
+# Pink
+pink = "#ffc0cb"
+mistyrose = "#ffe4e1"
+peachpuff = "#ffdab9"
+hotpink = "#ff69b4"
+lightpink = "#ffb6c1"
+lightcoral = "#f08080"
+lightcoral-pink = "#f89da1"
+
+# Purple
+darkviolet = "#9400d3"
+violet = "#ee82ee"
+
+# Blue
+paleturquoise = "#afeeee"
+powderblue = "#b0e0e6"
+powderblue-grey = "#c5d0d1"
+
+# Black
+dimgrey = "#696969"
+
+deep_black = "#000000"
+deep_cyan = "#00ccff"
+deep_blue = "#5555FF"
+deep_green = "#006600"
+deep_teal = "#008080"
+deep_grey = "#393939"
+deep_darkgrey = "#1a1a1a"
+deep_orange = "#ff5555"
+deep_pink = "#ff69b4" # hotpink
+deep_purple = "#991177"
+deep_rosybrown = "#9a7372"
+deep_red = "#770000"
+deep_salmon = "#fa8072"
+deep_white = "#ffffff"
+deep_yellow = "#ffdd00"

@@ -1,0 +1,15 @@
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
+name = "csv"
+scope = "source.csv"
+file-types = ["csv"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+roots = []
+
+[[grammar]]
+name = "csv"
+source = { git = "https://github.com/arnau/tree-sitter-csv" }
