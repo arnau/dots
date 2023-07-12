@@ -12,4 +12,4 @@ roots = []
 
 [[grammar]]
 name = "csv"
-source = { git = "https://github.com/arnau/tree-sitter-csv" }
+source = { git = "https://github.com/arnau/tree-sitter-csv", rev = "main" }
