@@ -22,7 +22,7 @@ vimcmd_visual_symbol = "[V](bold yellow)"
 [env_var.STARSHIP_SHELL]
 default = "???"
 format = "[$env_value]($style) "
-style = "bold purple"
+style = "purple"
 
 [git_branch]
 format = "[$branch]($style) "
@@ -30,17 +30,7 @@ style = "bold yellow"
 
 [hg_branch]
 format = "[hg~$branch]($style) "
-style = "bold #ff69b4"
+style = "bold purple"
 
 [nix_shell]
 format = '[nix~$state(\($name\))]($style)'
-
-[custom]
-
-[custom.tab]
-description = "The current tab in the tab terminal multiplexer"
-command = "tab --starship"
-when = "tab --starship"
-shell = ["sh"]
-format = "[$output]($style) "
-style = "bold blue"

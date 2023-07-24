@@ -9,3 +9,7 @@ trim_trailing_whitespace = true
 
 [{Makefile,**.mk}]
 indent_style = tab
+
+[Justfile]
+indent_style = space
+indent_size = 4
