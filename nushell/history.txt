@@ -1,0 +1,120 @@
+clear
+ls
+cargo install-update --list
+config nu
+clear
+open wez
+^open wez
+ls
+open datasette_content.db
+clear
+$env
+$env | table -e
+clear
+pueue
+pueue --help
+cd ...
+cd cellar/
+ls
+ls --help
+ls -a
+ls subdir
+ls --help
+tree
+ls
+ls -D 
+ls -l 
+ls | sort-by size | reverse 
+ls --du 
+ps
+ps | where cpu > 5
+ps | where name =~ wez
+date now
+date now | date to-table
+sys
+sys | less
+sys | sys to-table
+date --help
+date to-record
+date now | date to-record
+sys | get host.sessions.name
+sys | get host.sessions.name | each { |it| ^echo $it }
+"hi"
+ls
+ls *.toml
+ls | where name =~ ".toml"
+42 | describe
+ls
+just act
+open activity.sqlite
+open activity.sqlite | query db "select * from broadband"
+overlay list
+module spam {<\n>export def foo [] {<\n>  "foo"<\n>}<\n><\n>export alias bar = "bar"<\n><\n>export-env {<\n>  load-env { BAZ: "baz" }<\n>}<\n>}
+module spam {<\n>export def foo [] {<\n>  "foo"<\n>}<\n><\n>export-env {<\n>  load-env { BAZ: "baz" }<\n>}<\n>}
+overlay use spam
+foo
+bar
+$env.BAZ
+overlay list
+overlay hide spam
+overlay list
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+exa
+exa -t
+exa --tree
+ls
+exa | split
+exa | split list
+exa | split list " "
+$env.STARSHIP_SHELL = "nu"
+$env.PROMPT_COMMAND = { || starship prompt }
+$env.PROMPT_COMMAND_RIGHT = ""
+$env.PROMPT_INDICATOR = ""
+sx
+def foo [] {<\n>"hi"<\n>}
+exit
+hx
+config nu
+exit
+config env 
+config nu
+config env
+config nu
+exit
+ls Cellar.toml
+ls Cellar.toml | where name =~ "x"
+shells
+ls ~/.cache/starship/
+starship init nu | save -f ~/.cache/starship/init.nu
+hx ~/.cache/starship/init.nu
+use ~/.cache/starship/init.nu 
+exit
+hx ~/.config/starship.toml
+open Cellar.toml | from toml
+ls
+open Cellar.toml
+ls
+open history.csv
+help open
+help
+help --find page
+ls
+ls | explore 
+open activity.sqlite | explore
+open activity.sqlite | query db "select * from broadband"
+open activity.sqlite | query db "select * from broadband" | explore
+ls -la ../lab
+ls -la ../lab/wws
+cd ../lab/wws
+ls
+wws
+ls
+^wws
+./wws
+./wws https://github.com/vmware-labs/wasm-workers-server.git -i --git-folder "examples/js-basic"
+brew search love
+brew info love
+brew install love
+cd ..
+ls
+exit
