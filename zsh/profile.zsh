@@ -1,6 +1,6 @@
 LOCAL_PATH="$HOME/bin"
 
-export EDITOR="nvim"
+export EDITOR="hx"
 export PAGER="less"
 
 export PATH="$LOCAL_PATH:$PATH"
@@ -14,9 +14,6 @@ export OPENSSL_LIB_DIR="$OPENSSL_PATH/lib"
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 export MANPATH="$MANPATH:/usr/local/man"
-
-# Haskell, Idris
-export PATH="$PATH:$HOME/.cabal/bin"
 
 # SQLite installed via brew
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
@@ -41,3 +38,10 @@ export PATH="$HOME/.rye:$PATH"
 
 # RTX (alt asdf)
 eval "$($HOME/.cargo/bin/rtx activate zsh)"
+
+# Luarocks
+export PATH="$PATH:$HOME/.luarocks/bin"
+
+# Local (e.g. hammerspoon cli)
+export PATH="$PATH:$HOME/.local/bin"
+export MANPATH="$MANPATH:$HOME/.local/share/man"
