@@ -18,7 +18,7 @@ local ansi = {
   yellow = "khaki",
 
   bold_black = "dimgray",
-  bold_blue = "skyblue",
+  bold_blue = "lightskyblue",
   bold_cyan = "paleturquoise",
   bold_green = palette.lightgreen,
   bold_purple = "hotpink",

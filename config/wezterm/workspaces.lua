@@ -12,11 +12,11 @@ local workspace_keytable = {
     key = "n",
     action = action.PromptInputLine({
       description = wezterm.format({
-        { Attribute = { Intensity = "Bold" } },
-        { Foreground = { AnsiColor = "Fuchsia" } },
+        -- { Attribute = { Intensity = "Bold" } },
+        { Foreground = { Color = "pink" } },
         { Text = "Enter name for new workspace" },
       }),
-      action = wezterm.action_callback(function (window, pane, line)
+      action = wezterm.action_callback(function(window, pane, line)
         -- `nil` when `<escape>`; empty string when `<enter>`.
         if line then
           window:perform_action(
