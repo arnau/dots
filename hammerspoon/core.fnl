@@ -35,6 +35,11 @@
                                       :sigil :s
                                       :trigger {:mods [:ctrl] :key :space}}))
 
+(local {:ui hs-ui} (require :hs.window.highlight))
+(fn RulingRing.on-after-enable [self]
+  (alert "sauron"))
+
+
 (RulingRing:bind-action {:type :action
                          :mods [:ctrl]
                          :key :c
