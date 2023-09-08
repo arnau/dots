@@ -33,7 +33,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global RulingRing (sauron.make-ring {:id :ruling-ring
                                       :sigil :s
-                                      :trigger {:mods [:ctrl] :key :space}}))
+                                      :trigger {:mods [:alt] :key :space}}))
 
 (local {:ui hs-ui} (require :hs.window.highlight))
 (fn RulingRing.on-after-enable [self]
