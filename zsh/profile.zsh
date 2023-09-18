@@ -45,3 +45,6 @@ export PATH="$PATH:$HOME/.luarocks/bin"
 # Local (e.g. hammerspoon cli)
 export PATH="$PATH:$HOME/.local/bin"
 export MANPATH="$MANPATH:$HOME/.local/share/man"
+
+# zoxide
+eval "$(zoxide init zsh)"
