@@ -1,5 +1,6 @@
 alias vim=nvim
-alias ls=exa
+alias ls=eza
+alias exa=eza
 alias tree='exa -Tl'
 alias scannet='arp -i en0 -a'
 alias serve='devd .'
