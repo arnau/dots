@@ -5,10 +5,15 @@ export PAGER="less"
 
 export PATH="$LOCAL_PATH:$PATH"
 
+# Force nushell to look here instead.
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # OpenSSL
-OPENSSL_PATH="/usr/local/opt/openssl"
+# OPENSSL_PATH="/usr/local/opt/openssl"
+OPENSSL_PATH="/opt/homebrew/opt/openssl"
 export OPENSSL_INCLUDE_DIR="$OPENSSL_PATH/include"
 export OPENSSL_LIB_DIR="$OPENSSL_PATH/lib"
+
 
 # Homebrew
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"

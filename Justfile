@@ -26,3 +26,10 @@ helix-in:
 
 helix-out:
   cp -R helix ~/.config/
+
+
+carapace:
+  mkdir ~/.cache/carapace
+  carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+  #~/.config/nushell/config.nu
+  # source ~/.cache/carapace/init.nu
