@@ -33,3 +33,10 @@ carapace:
   carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
   #~/.config/nushell/config.nu
   # source ~/.cache/carapace/init.nu
+
+tree-sitter-in:
+  cp -R ~/Library/Application\ Support/tree-sitter/
+
+tree-sitter-out:
+  cp -R tree-sitter/* ~/Library/Application\ Support/tree-sitter/
+

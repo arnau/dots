@@ -1,0 +1,54 @@
+{
+  "parser-directories": [
+    "~/kitchen"
+  ],
+  "theme": {
+    "function": 26,
+    "string.special": 30,
+    "type.builtin": {
+      "color": 23,
+      "bold": true
+    },
+    "constant": "#ffb6c1",
+    "punctuation.bracket": "#b0e0e6",
+    "attribute": {
+      "italic": true,
+      "color": 124
+    },
+    "number": {
+      "color": "#ffb6c1",
+      "bold": true
+    },
+    "punctuation.delimiter": "#b0e0e6",
+    "keyword": 56,
+    "comment": {
+      "italic": true,
+      "color": 245
+    },
+    "embedded": null,
+    "operator": {
+      "bold": true,
+      "color": 239
+    },
+    "string": "#c5d0d1",
+    "constructor": 136,
+    "property": 124,
+    "tag": 18,
+    "module": 136,
+    "variable.parameter": {
+      "underline": true
+    },
+    "constant.builtin": {
+      "bold": true,
+      "color": "#f5deb3"
+    },
+    "function.builtin": {
+      "bold": true,
+      "color": 26
+    },
+    "variable.builtin": {
+      "bold": true
+    },
+    "type": 23
+  }
+}
