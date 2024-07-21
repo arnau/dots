@@ -9,6 +9,8 @@ local config = wezterm.config_builder()
 
 -- config.color_scheme = "AdventureTime"
 config.font = wezterm.font("JetBrains Mono")
+-- config.font = wezterm.font("Monaspace Xenon Var")
+-- config.font = wezterm.font("Fira Code")
 config.font_size = 13.0
 config.default_cursor_style = "SteadyBar"
 config.cursor_thickness = "2px"
@@ -31,7 +33,10 @@ config.key_tables = {
   workspaces = workspaces,
   panes = pane_keytable,
 }
+
+-- config.debug_key_events = true
 config.disable_default_key_bindings = true
+
 config.keys = {
   -- Leader keymaps
   { key = "a", mods = "LEADER|CTRL", action = action.SendKey { key = "a", mods = "CTRL" } },
@@ -51,8 +56,11 @@ config.keys = {
   { key = "k", mods = "LEADER",      action = action.ActivatePaneDirection("Up") },
   { key = "j", mods = "LEADER",      action = action.ActivatePaneDirection("Down") },
   { key = "g", mods = "LEADER",      action = action.PaneSelect },
+  { key = "z", mods = "LEADER",      action = action.TogglePaneZoomState },
 
   -- tabs
+  { key = "t", mods = "CMD",         action = action.SpawnTab("CurrentPaneDomain") },
+  { key = "w", mods = "CMD",         action = action.CloseCurrentTab({ confirm = true }) },
   { key = "t", mods = "LEADER",      action = action.ShowTabNavigator },
   { key = "1", mods = "CMD",         action = action.ActivateTab(0) },
   { key = "2", mods = "CMD",         action = action.ActivateTab(1) },
@@ -186,7 +194,6 @@ local gui_startup_config = function()
   mux.set_active_workspace("config")
   main_top_pane:activate()
 end
--- config.debug_key_events = true
 
 wezterm.on("gui-startup", gui_startup_config)
 wezterm.on("update-right-status", function(window, pane)
