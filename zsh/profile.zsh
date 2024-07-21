@@ -40,6 +40,7 @@ export WASMER_DIR="$HOME/.wasmer"
 
 # Rye (Python)
 export PATH="$HOME/.rye:$PATH"
+source ~/.rye/env
 
 # RTX (alt asdf)
 eval "$($HOME/.cargo/bin/rtx activate zsh)"

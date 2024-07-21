@@ -1,20 +1,11 @@
 # Nushell Environment Config File
 #
-# version = "0.84.0"
-
-def create_left_prompt [] {
-    starship prompt
-}
+# version = "0.87.1"
 
 $env.STARSHIP_SHELL = "nu"
 
-# Use nushell functions to define your right and left prompt
-$env.PROMPT_COMMAND = {|| create_left_prompt }
-# $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
+$env.PROMPT_COMMAND = {|| starship prompt }
 $env.PROMPT_COMMAND_RIGHT = ""
-
-# The prompt indicators are environmental variables that represent
-# the state of the prompt
 
 $env.PROMPT_INDICATOR = ""
 $env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
@@ -48,3 +39,13 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+
+$env.EDITOR = "hx"
+$env.VISUAL = "hx"
+
+$env.HOME_LIB = ($env.HOME | path join "Library/Application Support")
+$env.HOME_CACHE = ($env.HOME | path join ".cache")
+$env.HOME_CONFIG = ($env.HOME | path join ".config")
+$env.RYE_HOME = ($env.HOME | path join ".rye")
+
+export use std
