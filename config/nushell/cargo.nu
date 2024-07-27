@@ -24,7 +24,7 @@ def "cargo packages parse" [] {
     | headers
     | rename package current_version latest_version is_latest
     | where is_latest? != null
-    | update is_latest { $in == "Yes" }   
+    | update is_latest { $in != "Yes" }   
 }
 
 # Displays the list of installed packages.
@@ -43,8 +43,8 @@ def "cargo packages" [...packages] {
 }
 # Displays the list of installed packages that need updating.
 def "cargo packages outdated" [...packages] {
-    cargo packages ...$packages
-    | where "Needs update"
+    cargo packages list
+    | where not is_latest
 }
 
 # Updates the list of binaries installed with cargo.
