@@ -1,5 +1,5 @@
 # nuified `git status -s`
-def "git nu status" [
+def "gut status" [
   --untracked (-u): string = "normal" # Show untracked files. {no, normal, all}
   --ignored (-i): string = "no" # Show ignored files. {traditional, no, matching}
   --expand-labels (-e) # Expands symbols to labels.
@@ -16,23 +16,58 @@ def "git nu status" [
         $name
       }
     }
-  | update x { style-status $expand_labels }
-  | update y { style-status $expand_labels }
+  | update x { gut _style-status $expand_labels }
+  | update y { gut _style-status $expand_labels }
 }
 
-def style-status [e: bool] {
+def "gut remote list" [] {
+  ^git remote --verbose
+  | lines
+  | parse --regex '^(?P<name>[^\s]+)\s+(?P<url>[^\s]+)\s+\((?P<action>.+)\)$'
+}
+
+def "gut remote show" [name: string@"nu-complete git_remote_list" = "origin"] {
+  ^git remote show $name
+}
+
+def "gut reflog" [] {
+  ^git reflog --pretty='{commit_hash: "%h", ref_names: [%(decorate:prefix=,suffix=,pointer=>)], subject: "%s", reflog: "%gd"}'
+  | lines -s
+  | each { from nuon }
+}
+
+def --wrapped "gut log" [--help (-h), ...rest] {
+  if $help { return (help gut log) }
+
+  ^git log --pretty='{commit_hash: "%h", author: {name: "%an", email: "%ae", date: "%aI"}, committer: {name: "%cn", email: "%ce", date: "%cI"}, ref_names: [%(decorate:prefix=,suffix=,pointer=>)], subject: "%s"}' ...$rest
+  | lines -s
+  | each { from nuon }
+}
+
+def --wrapped "gut ls" [--help (-h), ...rest] {
+  if $help { return (help gut log) }
+
+  ^git ls-files ...$rest
+  | lines
+}
+
+def "nu-complete git_remote_list" [] {
+  ^git remote | lines | str trim 
+}
+
+def "gut _style-status" [e: bool] {
   let status = $in
   if $e {
-    $status | expand-status
+    $status | gut _expand-status
   } else { 
     match $status {
-      " " => $"($status | status-colour).(ansi reset)"
-      _ => $"($status | status-colour)($status)(ansi reset)"
+      " " => $"($status | gut _status-colour).(ansi reset)"
+      _ => $"($status | gut _status-colour)($status)(ansi reset)"
     }
   }
 }
 
-def expand-status [] {
+def "gut _expand-status" [] {
   let status = $in
   let label = match $status {
     " " => "unmodified"
@@ -48,10 +83,10 @@ def expand-status [] {
     "U" => "updated"
   }
 
-  $"($status | status-colour)($label)(ansi reset)"
+  $"($status | gut _status-colour)($label)(ansi reset)"
 }
 
-def status-colour [] {
+def "gut _status-colour" [] {
   let status = $in
   match $status {
     " " => (ansi white_bold)
@@ -68,5 +103,3 @@ def status-colour [] {
     _ => (ansi white)
   }
 }
-
-alias "gun st" = git nu status
