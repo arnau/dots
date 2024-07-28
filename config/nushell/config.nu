@@ -569,3 +569,4 @@ $env.LS_COLORS = (vivid generate ~/.config/vivid/stung.yml | str trim)
 
 source ($nu.config-path | path dirname | path join "zoxide.nu")
 source ($nu.config-path | path dirname | path join "cargo.nu")
+source ($nu.config-path | path dirname | path join "git.nu")

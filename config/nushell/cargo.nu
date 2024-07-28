@@ -51,6 +51,6 @@ def "cargo packages outdated" [...packages] {
 def "cargo packages update" [...packages] {
     let all_or_some = if ($packages | is-empty) { --all } else { $packages }
 
-    ^cargo install-update $all_or_some
+    ^cargo install-update ...$all_or_some
     | cargo packages parse
 }
