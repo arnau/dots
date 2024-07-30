@@ -36,16 +36,18 @@ def "gut reflog" [] {
   | each { from nuon }
 }
 
+const log_full = '{commit_hash: "%h",author: {name: "%an", email: "%ae", date: "%aI"}, committer: {name: "%cn", email: "%ce", date: "%cI"}, ref_names: [%(decorate:prefix=,suffix=,pointer=>)], subject: "%s"}'
+
 def --wrapped "gut log" [--help (-h), ...rest] {
   if $help { return (help gut log) }
 
-  ^git log --pretty='{commit_hash: "%h", author: {name: "%an", email: "%ae", date: "%aI"}, committer: {name: "%cn", email: "%ce", date: "%cI"}, ref_names: [%(decorate:prefix=,suffix=,pointer=>)], subject: "%s"}' ...$rest
+  ^git log --pretty=($log_full) ...$rest
   | lines -s
   | each { from nuon }
 }
 
 def --wrapped "gut ls" [--help (-h), ...rest] {
-  if $help { return (help gut log) }
+  if $help { return (help gut ls) }
 
   ^git ls-files ...$rest
   | lines
