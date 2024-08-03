@@ -17,7 +17,6 @@
   fuzzlog = !git log --oneline --shortstat --quiet | fzf -e
   gl = log --graph --date=short --pretty=format:\"%C(red)%h%Creset %C(green)%ad%Creset %s%C(yellow) %D%Creset %C(bold blue)%G? %aN <%ae>%Creset\"
   dl = log --graph --date=short --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(blue)%ad%C(reset) %C(dim white)%ae%C(reset) %C(auto)%d%C(reset) %C(normal)%s%C(reset)'
-  loglive = !~/.dots/git/bin/git-loglive
   ls = ls-files
   lst = diff-tree --no-commit-id --name-only -r
   merge = merge -s
@@ -25,7 +24,6 @@
   pull = pull --rebase=preserve
   rebase = rebase -s
   st = status -sb
-  treelive = !~/.dots/git/bin/git-treelive
   type = cat-file -t
   viff = difftool -y -t vimdiff
 
