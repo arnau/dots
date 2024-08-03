@@ -1,3 +1,5 @@
 cache/
 log/.zsh_history
 *.lock
+config/nushell/history.txt
+config/nushell/plugin.msgpackz
