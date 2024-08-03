@@ -1,6 +1,7 @@
 {
   "parser-directories": [
-    "~/kitchen"
+    "~/kitchen",
+    "~/.config/helix"
   ],
   "theme": {
     "function": 26,
