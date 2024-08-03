@@ -19,6 +19,7 @@ def "gut status" [
   | update x { gut _style-status $expand_labels }
   | update y { gut _style-status $expand_labels }
 }
+alias "gut s" = gut status
 
 def "gut remote list" [] {
   ^git remote --verbose
