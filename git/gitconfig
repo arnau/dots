@@ -1,3 +1,7 @@
+[user]
+  name = Arnau Siches
+  email = arnau@seachess.net
+
 [alias]
   active = rev-parse --abbrev-ref HEAD
   amend = ci --amend
