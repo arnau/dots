@@ -98,7 +98,9 @@ export module ddb {
   # ddb run "select * from read_csv('foo.csv', delim = '|', header = false, columns = {'id': 'bigint', name: 'varchar', 'date': 'date'}, dateformat = '%d/%m/%Y')"
   # ```
   export def "open" [glob: string] {
-      ^duckdb -c $"select * from '($glob)'"
+     ^duckdb -jsonlines -c $"select * from '($glob)'"
+    | lines
+    | each { from json }
   }
 
   # Saves the given data into the given filename.
@@ -126,9 +128,6 @@ export module ddb {
       | to csv
       | duckdb -c $"copy \(select * from read_csv\('/dev/stdin'\)\) to '($filename)' \(format '($format)'\)"
   }
-
-
-
 
   # Shows the DuckDB version
   export def version [] {
