@@ -229,7 +229,7 @@ $env.config.hooks = {
                 {
                     # Attempt to load sea.nu when inside the cellar.
                     condition: { |before, after| $after =~ "cellar$" and "sea" not-in (overlay list) }
-                    code: "overlay use toolbox/sea.nu"
+                    code: "overlay use toolbox/sea.nu; use ddb"
                 }
                 {
                     condition: {|before, after|
@@ -567,6 +567,9 @@ $env.config.keybindings = [
 
 $env.LS_COLORS = (vivid generate ~/.config/vivid/stung.yml | str trim)
 
+source ($nu.config-path | path dirname | path join "my.nu")
 source ($nu.config-path | path dirname | path join "zoxide.nu")
 source ($nu.config-path | path dirname | path join "cargo.nu")
 source ($nu.config-path | path dirname | path join "git.nu")
+
+export use ddb
