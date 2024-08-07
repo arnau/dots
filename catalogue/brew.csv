@@ -35,7 +35,6 @@ brew,graphviz,Graph visualization software from AT&T and Bell Labs
 brew,helix,Post-modern modal text editor
 brew,imagemagick,Tools and libraries to manipulate images in many formats
 brew,jq,Lightweight and flexible command-line JSON processor
-brew,kakoune,Selection-based modal text editor
 brew,libgit2,C library of Git core methods that is re-entrant and linkable
 brew,llvm,Next-gen compiler infrastructure
 brew,lua-language-server,Language Server for the Lua language
@@ -58,7 +57,6 @@ brew,vscode-langservers-extracted,"Language servers for HTML, CSS, JavaScript, a
 brew,wabt,Web Assembly Binary Toolkit
 brew,wasmer,Universal WebAssembly Runtime
 brew,wget,Internet file retriever
-brew,yazi,"Blazing fast terminal file manager written in Rust, based on async I/O"
 brew,zig,"Programming language designed for robustness, optimality, and clarity"
 brew,zola,Fast static site generator in a single binary with everything built-in
 brew,zoxide,Shell extension to navigate your filesystem faster
