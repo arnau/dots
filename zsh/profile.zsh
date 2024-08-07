@@ -42,9 +42,6 @@ export WASMER_DIR="$HOME/.wasmer"
 export PATH="$HOME/.rye:$PATH"
 source ~/.rye/env
 
-# RTX (alt asdf)
-eval "$($HOME/.cargo/bin/rtx activate zsh)"
-
 # Luarocks
 export PATH="$PATH:$HOME/.luarocks/bin"
 
