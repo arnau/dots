@@ -1,0 +1,80 @@
+type,name,summary
+tap,1password/tap,
+tap,cargo-lambda/cargo-lambda,
+tap,clockworklabs/tap,
+tap,filosottile/musl-cross,
+tap,helix-editor/helix,
+tap,homebrew/bundle,
+tap,libsql/sqld,
+tap,messense/macos-cross-toolchains,
+tap,neovim/neovim,
+tap,oven-sh/bun,
+tap,pkgxdev/made,
+tap,rsteube/tap,
+tap,sbdchd/skim,
+tap,surrealdb/tap,
+tap,wez/wezterm,
+brew,autoconf,Automatic configure script builder
+brew,automake,Tool for generating GNU Standards-compliant Makefiles
+brew,openssl@3,Cryptography and SSL/TLS Toolkit
+brew,aws-sam-cli,"CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
+brew,cmake,Cross-platform make
+brew,cmake-docs,Documentation for CMake
+brew,code-minimap,High performance code minimap generator
+brew,coreutils,"GNU File, Shell, and Text utilities"
+brew,deno,Secure runtime for JavaScript and TypeScript
+brew,dos2unix,"Convert text between DOS, UNIX, and Mac formats"
+brew,duckdb,Embeddable SQL OLAP Database Management System
+brew,editorconfig,Maintain consistent coding style between multiple editors
+brew,fd,"Simple, fast and user-friendly alternative to find"
+brew,fish,User-friendly command-line shell for UNIX-like operating systems
+brew,fzf,Command-line fuzzy finder written in Go
+brew,gcc,GNU compiler collection
+brew,git,Distributed revision control system
+brew,graphviz,Graph visualization software from AT&T and Bell Labs
+brew,helix,Post-modern modal text editor
+brew,imagemagick,Tools and libraries to manipulate images in many formats
+brew,jq,Lightweight and flexible command-line JSON processor
+brew,kakoune,Selection-based modal text editor
+brew,libgit2,C library of Git core methods that is re-entrant and linkable
+brew,llvm,Next-gen compiler infrastructure
+brew,lua-language-server,Language Server for the Lua language
+brew,luajit,Just-In-Time Compiler (JIT) for the Lua programming language
+brew,luarocks,Package manager for the Lua programming language
+brew,miniserve,High performance static file server
+brew,neovim,Ambitious Vim-fork focused on extensibility and agility
+brew,node,Platform built on V8 to build network applications
+brew,pandoc,Swiss-army knife of markup format conversion
+brew,pipx,Execute binaries from Python packages in isolated environments
+brew,poppler,PDF rendering library (based on the xpdf-3.0 code base)
+brew,restic,"Fast, efficient and secure backup program"
+brew,rocksdb,"Embeddable, persistent key-value store for fast storage"
+brew,shellcheck,"Static analysis and lint tool, for (ba)sh scripts"
+brew,showkey,Simple keystroke visualizer
+brew,stockfish,Strong open-source chess engine
+brew,typescript-language-server,Language Server Protocol implementation for TypeScript wrapping tsserver
+brew,unar,Command-line unarchiving tools supporting multiple formats
+brew,vscode-langservers-extracted,"Language servers for HTML, CSS, JavaScript, and JSON extracted from vscode"
+brew,wabt,Web Assembly Binary Toolkit
+brew,wasmer,Universal WebAssembly Runtime
+brew,wget,Internet file retriever
+brew,yazi,"Blazing fast terminal file manager written in Rust, based on async I/O"
+brew,zig,"Programming language designed for robustness, optimality, and clarity"
+brew,zola,Fast static site generator in a single binary with everything built-in
+brew,zoxide,Shell extension to navigate your filesystem faster
+brew,cargo-lambda/cargo-lambda/cargo-lambda,Cargo Lambda is a Cargo subcommand to help you work with AWS Lambda.
+brew,filosottile/musl-cross/musl-cross,Linux cross compilers based on musl libc
+brew,messense/macos-cross-toolchains/arm-unknown-linux-gnueabihf,arm Linux GNU eabihf Toolchain
+brew,messense/macos-cross-toolchains/armv7-unknown-linux-gnueabihf,armv7 Linux GNU eabihf Toolchain
+brew,rsteube/tap/carapace,multi-shell multi-command argument completer
+brew,surrealdb/tap/surreal,"A scalable, distributed, collaborative, document-graph database"
+cask,1password-cli,Command-line interface for 1Password
+cask,alacritty,GPU-accelerated terminal emulator
+cask,hammerspoon,Desktop automation application
+cask,karabiner-elements,Keyboard customiser
+cask,mactex,Full TeX Live distribution with GUI applications
+cask,rancher,Kubernetes and container management on the desktop
+cask,rectangle,Move and resize windows using keyboard shortcuts or snap areas
+cask,wezterm,GPU-accelerated cross-platform terminal emulator and multiplexer
+cask,xquartz,Open-source version of the X.Org X Window System
+cask,zed,Multiplayer code editor

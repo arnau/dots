@@ -54,3 +54,20 @@ def "cargo packages update" [...packages] {
     ^cargo install-update ...$all_or_some
     | cargo packages parse
 }
+
+# Fetches info from the given list of crates.
+#
+# ```nushell
+# cargo packages | cargo packages info | save crates.csv
+# ```
+def "cargo packages info" [] {
+    $in
+    | each {|row|
+          ^cargo search --limit 1 -q $row.package
+          | lines
+          | first
+          | parse "{package} = \"{version}\"    # {summary}"
+          | reject version
+      }
+    | flatten
+}

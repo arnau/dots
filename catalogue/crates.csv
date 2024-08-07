@@ -1,0 +1,38 @@
+package,desc
+ast-grep,Search and Rewrite code at large scale using precise AST pattern
+bat,A cat(1) clone with wings.
+cargo-audit,Audit Cargo.lock for crates with security vulnerabilities
+cargo-crev,Distibuted Code REView system for verifying security and quality of Cargo dependencies
+cargo-edit,Cargo commands for modifying a `Cargo.toml` file..
+cargo-expand,Wrapper around rustc -Zunpretty=expanded. Shows the result of macro expansion and #[derive] expansio…
+cargo-machete,Find unused dependencies with this one weird trick!
+cargo-outdated,Cargo subcommand for displaying when dependencies are out of date
+cargo-update,A cargo subcommand for checking and applying updates to installed executables
+chess-tui,A chess TUI implementation in rust 🦀
+cross,Zero setup cross compilation and cross testing
+csvlens,Command line csv viewer
+du-dust,A more intuitive version of du
+fd-find,"fd is a simple, fast and user-friendly alternative to find."
+flamegraph,"A simple cargo subcommand for generating flamegraphs, using inferno under the hood"
+git-delta,A syntax-highlighting pager for git
+jnv,JSON navigator and interactive filter leveraging jq
+just,🤖 Just a command runner
+monolith,CLI tool for saving web pages as a single HTML file
+nu,A new type of shell
+nu_plugin_formats,An I/O plugin for a set of file formats for Nushell
+nu_plugin_polars,Nushell dataframe plugin commands based on polars.
+nu_plugin_query,"A Nushell plugin to query JSON, XML, and various web data"
+numbat-cli,A statically typed programming language for scientific computations with first class support for physi…
+ouch,A command-line utility for easily compressing and decompressing files and directories.
+pastel,"A command-line tool to generate, analyze, convert and manipulate colors"
+ripgrep,ripgrep is a line-oriented search tool that recursively searches the current directory for a regex patter…
+sgf-render,A renderer for SGF diagrams.
+skim,Fuzzy Finder in rust!
+starship,"The minimal, blazing-fast, and infinitely customizable prompt for any shell! ☄🌌️ "
+stylua,A code formatter for Lua
+taplo-cli,A CLI for Taplo TOML toolkit
+tauri-cli,Command line interface for building Tauri apps
+tokio-console,The Tokio console: a debugger for async Rust. 
+viu,View images right from the terminal.
+vivid,LS_COLORS manager with multiple themes
+zellij,A terminal workspace with batteries included

@@ -47,6 +47,19 @@ export def "dots bootstrap" [] {
   carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 }  
 
+# Pull installed brews into the catalogue.
+export def "dots brew pull" [] {
+  brew dump
+  | save -f catalogue/brew.csv
+}
+
+# Pull installed crates into the catalogue.
+export def "dots crates pull" [] {
+  cargo packages
+  | cargo packages info
+  | save -f catalogue/crates.csv
+}
+
 
 # Structured help.
 export def main [] {

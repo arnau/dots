@@ -571,5 +571,6 @@ source ($nu.config-path | path dirname | path join "my.nu")
 source ($nu.config-path | path dirname | path join "zoxide.nu")
 source ($nu.config-path | path dirname | path join "cargo.nu")
 source ($nu.config-path | path dirname | path join "git.nu")
+source ($nu.config-path | path dirname | path join "brew.nu")
 
 export use ddb
