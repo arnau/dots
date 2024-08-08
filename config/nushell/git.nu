@@ -54,7 +54,6 @@ def --wrapped "gut log" [
   | each { from nuon }
 }
 
-
 def --wrapped "gut ls" [--help (-h), ...rest] {
   if $help { return (help gut ls) }
 
@@ -113,4 +112,26 @@ def "gut _status-colour" [] {
     "U" => (ansi blue)
     _ => (ansi white)
   }
+}
+
+
+# Slurps changes for the given paths into the last commit.
+def "git slurp" [
+  --signoff (-s) # Add a Signed-off-by trailer by the committer at the end of the commit log message.
+  --gpg-sign (-S) # Sign commit with the default keyid.
+  ...paths
+] {
+  let flags = [
+    {flag: "--signoff", value: $signoff}
+    {flag: "--gpg-sign", value: $gpg_sign}
+  ]
+
+  if ($paths | is-empty) {
+    error make { msg: "You must pass at least one path to be added." }
+  }
+
+  let options = $flags | where value != false | get flag | str join ' '
+
+  ^git add ...$paths
+  ^git commit $options --amend --no-edit
 }
