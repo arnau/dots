@@ -60,7 +60,6 @@ export def "dots crates pull" [] {
   | save -f catalogue/crates.csv
 }
 
-
 # Structured help.
 export def main [] {
   scope commands

@@ -15,3 +15,15 @@ def "brew dump" [] {
   $brewfile
   | join -l ($brewfile | where type != "tap" | get name | brew info) name
 }
+
+# Generates a Brewfile from a catalogue file.
+#
+# ```nushell
+# open catalogue/brew.csv | brew assemble | save Brewfile
+# ```
+def "brew assemble" [] {
+  $in
+  | select type name
+  | each { |row| $"($row.type) ($row.name)" }
+  | str join "\n"
+}
