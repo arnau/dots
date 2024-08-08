@@ -37,8 +37,6 @@ def "git reflog" [] {
   | each { from nuon }
 }
 
-const log_full_template = '{commit_hash: "%h",author: {name: "%an", email: "%ae", date: "%aI"}, committer: {name: "%cn", email: "%ce", date: "%cI"}, ref_names: [%(decorate:prefix=,suffix=,pointer=>)], subject: "%s"}'
-const log_slim_template = '{commit_hash: "%h", author: "%ae", ref_names: [%(decorate:prefix=,suffix=,pointer=>)], subject: "%s"}'
 
 def --wrapped "git log" [
   --help (-h),
@@ -47,11 +45,19 @@ def --wrapped "git log" [
 ] {
   if $help { return (help git log) }
 
-  let template = if $slim { $log_slim_template } else { $log_full_template }
+  const template = "%h\t{name: \"%an\", email: \"%ae\", date: \"%as\"}\t{name: \"%cn\", email: \"%ce\", date: \"%cI\"}\t[%(decorate:prefix=,suffix=,pointer=>)]\t%s"
+  const columns = [hash author committer refs subject]
 
   ^git log --pretty=($template) ...$rest
-  | lines -s
-  | each { from nuon }
+  | from csv -s "\t" -n
+  | rename ...$columns
+  | update author { from nuon }
+  | update committer { from nuon }
+  | update refs { from nuon }
+  | if ($slim) {
+      select hash author.date author.email refs subject
+    } else { $in }
+
 }
 
 def --wrapped "git ls" [--help (-h), ...rest] {
