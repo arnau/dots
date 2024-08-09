@@ -140,6 +140,5 @@ def "git slurp" [
 
   let options = $flags | where value != false | get flag
 
-  ^git add ...$paths
-  ^git commit ...$options
+  ^git commit ...$options ...$paths
 }
