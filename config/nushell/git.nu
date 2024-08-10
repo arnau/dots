@@ -60,6 +60,8 @@ def --wrapped "git log" [
 
 }
 
+alias "git l" = git log -s
+
 def --wrapped "git ls" [--help (-h), ...rest] {
   if $help { return (help git ls) }
 
