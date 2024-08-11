@@ -10,7 +10,7 @@
     </author>
     <category citation-format="note"/>
     <category field="history"/>
-    <updated>2024-08-10T18:34:00+00:00</updated>
+    <updated>2024-08-11T18:34:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -58,14 +58,14 @@
 
   <macro name="editor">
     <names variable="editor">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
+      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <label form="short" prefix=" (" suffix=")" />
     </names>
   </macro>
 
   <macro name="translator">
     <names variable="translator">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
+      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <label form="short" prefix=" (" suffix=")" />
     </names>
   </macro>
@@ -73,7 +73,7 @@
   <macro name="contributors">
     <group delimiter=". ">
     <names variable="author">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
+      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <substitute>
         <text macro="editor" />
         <text macro="translator" />
@@ -82,9 +82,36 @@
     </group>
   </macro>
 
+  <macro name="editor-citation">
+    <names variable="editor">
+      <name and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
+      <label form="short" prefix=" (" suffix=")" />
+    </names>
+  </macro>
+
+  <macro name="translator-citation">
+    <names variable="translator">
+      <name and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
+      <label form="short" prefix=" (" suffix=")" />
+    </names>
+  </macro>
+  
+  <macro name="contributors-citation">
+    <group delimiter=". ">
+    <names variable="author">
+      <name and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
+      <substitute>
+        <text macro="editor-citation" />
+        <text macro="translator-citation" />
+      </substitute>
+    </names>
+    </group>
+  </macro>
+
+
   <macro name="contributors-sort">
     <names variable="author">
-      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
+      <name and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <substitute>
         <text macro="editor"/>
         <text macro="translator"/>
@@ -153,11 +180,11 @@
       <key variable="title" />
       <key variable="issued" />
     </sort>
-    <layout suffix=".">
+    <layout suffix="." delimiter=" ">
       <group delimiter=", ">
         <group delimiter=" ">
           <group delimiter=", ">
-            <text macro="contributors" />
+            <text macro="contributors-citation" />
             <text macro="title-short" />
           </group>
           <text macro="container" />
@@ -167,6 +194,7 @@
       </group>
     </layout>
   </citation>
+
   <bibliography hanging-indent="true" et-al-min="8" et-al-use-first="4" entry-spacing="0">
     <sort>
       <key macro="contributors-sort" />
