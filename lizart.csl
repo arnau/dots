@@ -10,16 +10,17 @@
     </author>
     <category citation-format="note"/>
     <category field="history"/>
-    <updated>2024-03-02T16:00:00+00:00</updated>
+    <updated>2024-08-10T18:34:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
     <terms>
-      <term name="editor" form="verb-short">ed.</term>
-      <term name="editor" form="short">eds</term>
-      <term name="translator" form="verb-short">trans</term>
+      <term name="editor" form="short">
+        <single>ed.</single>
+        <multiple>eds</multiple>
+      </term>
       <term name="translator" form="short">trans</term>
-      <term name="editortranslator" form="verb-short">ed. and trans.</term>
+      <term name="editortranslator" form="short">ed. and trans.</term>
       <term name="editortranslator" form="verb">Edited and translated by</term>
     </terms>
   </locale>
@@ -57,14 +58,14 @@
 
   <macro name="editor">
     <names variable="editor">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialise-with="." />
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <label form="short" prefix=" (" suffix=")" />
     </names>
   </macro>
 
   <macro name="translator">
     <names variable="translator">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialise-with="." />
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <label form="short" prefix=" (" suffix=")" />
     </names>
   </macro>
@@ -72,7 +73,7 @@
   <macro name="contributors">
     <group delimiter=". ">
     <names variable="author">
-      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialise-with="." />
+      <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <substitute>
         <text macro="editor" />
         <text macro="translator" />
@@ -83,7 +84,7 @@
 
   <macro name="contributors-sort">
     <names variable="author">
-      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialise-with="." />
+      <name name-as-sort-order="all" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" initialize-with="." />
       <substitute>
         <text macro="editor"/>
         <text macro="translator"/>
