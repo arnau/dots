@@ -43,9 +43,14 @@ $env.NU_PLUGIN_DIRS = [
 $env.EDITOR = "hx"
 $env.VISUAL = "hx"
 
+# Where the Books.app data lays.
+$env.BOOKS_HOME = $"($env.HOME)/Library/Containers/com.apple.iBooksX/Data/Documents/"
+
 $env.HOME_LIB = ($env.HOME | path join "Library/Application Support")
 $env.HOME_CACHE = ($env.HOME | path join ".cache")
 $env.HOME_CONFIG = ($env.HOME | path join ".config")
+
+# External tools
 $env.RYE_HOME = ($env.HOME | path join ".rye")
 
 export use std

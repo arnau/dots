@@ -573,6 +573,8 @@ source ($nu.config-path | path dirname | path join "cargo.nu")
 source ($nu.config-path | path dirname | path join "git.nu")
 source ($nu.config-path | path dirname | path join "brew.nu")
 
+export use ($nu.config-path | path dirname | path join "testing.nu")
+
 export use ddb
 
 export alias firefox = /Applications/Firefox.app/Contents/MacOS/firefox
