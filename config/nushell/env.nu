@@ -44,7 +44,9 @@ $env.EDITOR = "hx"
 $env.VISUAL = "hx"
 
 # Where the Books.app data lays.
-$env.BOOKS_HOME = $"($env.HOME)/Library/Containers/com.apple.iBooksX/Data/Documents/"
+$env.BOOKS_HOME = $"($env.HOME)/Library/Containers/com.apple.iBooksX/Data/Documents"
+$env.FIREFOX_HOME = $"($env.HOME)/Library/Application Support/Firefox/Profiles/ynmd11dc.default-release"
+
 
 $env.HOME_LIB = ($env.HOME | path join "Library/Application Support")
 $env.HOME_CACHE = ($env.HOME | path join ".cache")
