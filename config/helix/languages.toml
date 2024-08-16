@@ -13,3 +13,53 @@ roots = []
 [[grammar]]
 name = "csv"
 source = { git = "https://github.com/arnau/tree-sitter-csv", rev = "main" }
+
+
+[[language]]
+name = "lua"
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "fennel"
+scope = "source.fennel"
+file-types = ["fnl"]
+comment-token = ";"
+indent = { tab-width = 2, unit = "  " }
+grammar = "scheme"
+roots = []
+
+[[grammar]]
+name = "fennel"
+source = { git = "https://github.com/travonted/tree-sitter-fennel", rev = "master" }
+
+[[language]]
+name = "nu"
+auto-format = true
+indent = { tab-width = 4, unit = "    " }
+
+[[grammar]]
+name = "nu"
+source = { git = "https://github.com/nushell/tree-sitter-nu", rev = "main" }
+
+# [[language]]
+# name = "typescript"
+# shebangs = ["deno"]
+# roots = ["deno.json", "deno.jsonc"]
+# auto-format = true
+# language-servers = ["deno-lsp"]
+
+# [language-server.deno-lsp]
+# command = "deno"
+# args = ["lsp"]
+
+# [language-server.deno-lsp.config.deno]
+# enable = true
+# unstable = true
+# suggest.imports.hosts = { "https://deno.land" = true }
+# inlayHints.parameterNames.enabled = "all"
+# inlayHints.parameterTypes.enabled = true
+# inlayHints.variableTypes.enabled = true
+# inlayHints.propertyDeclarationTypes.enabled  = true
+# inlayHints.functionLikeReturnTypes.enabled = true
+# inlayHints.enumMemberValues.enabled = true

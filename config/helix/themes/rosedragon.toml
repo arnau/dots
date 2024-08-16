@@ -74,8 +74,11 @@ label = "pink"
 "ui.text.focus" = { fg = "deep_white" }
 "ui.text.inactive" = "grey"
 
-"ui.virtual" = { fg = "navajowhite" }
+"ui.virtual" = { fg = "burlywood-tamed" }
 "ui.virtual.indent-guide" = { fg = "darkgrey" }
+# "ui.virtual.inlay-hint" = { fg = "dimgrey" }
+# "ui.virtual.inlay-hint.type" = { fg = "dimgrey", style = "curl" }
+
 
 "ui.selection" = { bg = "darkgrey" }
 "ui.selection.primary" = { bg = "deep_black" }

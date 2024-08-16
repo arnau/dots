@@ -3,6 +3,7 @@ const my_config_allow_list = [
   carapace
   fish
   hammerspoon
+  helix
   nushell
   tree-sitter
   vivid

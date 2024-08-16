@@ -36,7 +36,11 @@ render = false
 
 
 [keys.insert]
-j = { k = "normal_mode" }
+"C-j" = "normal_mode"
 
 [keys.normal.g]
 a = "code_action"
+
+[keys.normal.space]
+"i" = ":toggle lsp.display-inlay-hints"
+"," = ":lsp-workspace-command"
