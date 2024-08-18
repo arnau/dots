@@ -114,26 +114,6 @@ config.keys = {
 -- tabs
 helpers.append(config.keys, tab_keytable)
 
-
-local gui_startup = function()
-  local project_dir = wezterm.home_dir .. "/kitchen/cellar"
-
-  local tab, main_pane, window = mux.spawn_window({
-    cwd = project_dir,
-    -- workspace = { "cellar" }
-  })
-
-  window:set_title("cellar")
-
-  local bulletin_log = main_pane:split({
-    direction = "Bottom",
-    cwd = project_dir,
-  })
-  bulletin_log:send_text("hx data/bulletins/2023.csv\n")
-
-  main_pane:activate()
-end
-
 local startup_config = function()
   local project_dir = wezterm.home_dir .. "/.config/wezterm"
 
