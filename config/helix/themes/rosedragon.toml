@@ -6,7 +6,7 @@ keyword = "wheat"
 "keyword.control.conditional" = { fg = "powderblue", modifiers = ["dim"] }
 "keyword.control.repeat" = { fg = "powderblue", modifiers = ["dim"] }
 "keyword.function" = { fg = "powderblue", modifiers = ["dim"] }
-"keyword.storage.modifier.ref" = { fg = "hotpink", modifiers = []}
+"keyword.storage.modifier.ref" = { fg = "hotpink", modifiers = [] }
 "keyword.special" = "hotpink"
 
 namespace = "pink"
@@ -84,7 +84,7 @@ label = "pink"
 "ui.selection.primary" = { bg = "deep_black" }
 "ui.cursor.select" = { modifiers = ["reversed"] }
 "ui.cursor.insert" = { modifiers = ["reversed"] }
-"ui.cursor.match" = { fg = "hotpink", modifiers = ["bold"]}
+"ui.cursor.match" = { fg = "hotpink", modifiers = ["bold"] }
 "ui.cursor" = { modifiers = ["reversed"] }
 "ui.cursorline.primary" = { bg = "darkgrey" }
 # TODO: check
@@ -171,7 +171,7 @@ deep_teal = "#008080"
 deep_grey = "#393939"
 deep_darkgrey = "#1a1a1a"
 deep_orange = "#ff5555"
-deep_pink = "#ff69b4" # hotpink
+deep_pink = "#ff69b4"      # hotpink
 deep_purple = "#991177"
 deep_rosybrown = "#9a7372"
 deep_red = "#770000"

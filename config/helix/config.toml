@@ -16,7 +16,15 @@ select = "underline"
 mode.normal = "N"
 mode.insert = "I"
 mode.select = "S"
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type", "version-control"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+  "version-control",
+]
 
 [editor.soft-wrap]
 enable = true
@@ -32,7 +40,6 @@ tab = "all"
 
 [editor.indent-guides]
 render = false
-
 
 
 [keys.insert]

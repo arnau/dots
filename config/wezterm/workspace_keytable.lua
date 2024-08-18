@@ -3,7 +3,7 @@ local action = wezterm.action
 
 local workspace_keytable = {
   {
-    key = "w",
+    key = "s",
     action = action.ShowLauncherArgs({
       flags = "FUZZY|WORKSPACES",
     }),
