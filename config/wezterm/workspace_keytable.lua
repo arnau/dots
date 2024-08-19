@@ -1,15 +1,17 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
+local Ring = require("ring").Ring
 
-local workspace_keytable = {
+local ring = Ring:new({
   {
     key = "s",
-    action = action.ShowLauncherArgs({
-      flags = "FUZZY|WORKSPACES",
-    }),
+    mods = "NONE",
+    action = action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
+    desc = "Selects an existing workspace.",
   },
   {
     key = "n",
+    mods = "NONE",
     action = action.PromptInputLine({
       description = wezterm.format({
         -- { Attribute = { Intensity = "Bold" } },
@@ -26,7 +28,19 @@ local workspace_keytable = {
         end
       end),
     }),
-  }
+    desc = "Creates a new workspace. Prompts for a name.",
+  },
+})
+
+local keytable = {
+  { key = "?", mods = "NONE", action = action.Multiple {
+    action.PopKeyTable,
+    ring:show_help(),
+  } },
 }
 
-return workspace_keytable
+for _, item in ipairs(ring.keys) do
+  table.insert(keytable, { key = item.key, mods = item.mods, action = item.action })
+end
+
+return keytable
