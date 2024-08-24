@@ -1,16 +1,14 @@
 # Nushell Environment Config File
-#
-# version = "0.87.1"
 
 $env.STARSHIP_SHELL = "nu"
 
-$env.PROMPT_COMMAND = {|| starship prompt }
+$env.PROMPT_COMMAND = {|| (starship prompt | lines | get 1 | $in + "\n\n") }
 $env.PROMPT_COMMAND_RIGHT = ""
 
 $env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
-$env.PROMPT_INDICATOR_VI_NORMAL = {|| "· " }
-$env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| ":  " }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| "·  " }
+$env.PROMPT_MULTILINE_INDICATOR = {|| ":: " }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
