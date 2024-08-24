@@ -3,11 +3,12 @@
 $env.STARSHIP_SHELL = "nu"
 
 $env.PROMPT_COMMAND = {|| (starship prompt | lines | get 1 | $in + "\n\n") }
+$env.TRANSIENT_PROMPT_COMMAND = ""
 $env.PROMPT_COMMAND_RIGHT = ""
 
 $env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = {|| ":  " }
-$env.PROMPT_INDICATOR_VI_NORMAL = {|| "·  " }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| "·  " }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| "·· " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| ":: " }
 
 # Specifies how environment variables are:
