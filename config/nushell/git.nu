@@ -62,6 +62,12 @@ def --wrapped "git log" [
 
 alias "git l" = git log -s
 
+# Last log record
+def "git last" [] {
+    git log -1 | get 0
+}
+
+
 def --wrapped "git ls" [--help (-h), ...rest] {
   if $help { return (help git ls) }
 
