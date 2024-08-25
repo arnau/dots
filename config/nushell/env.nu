@@ -7,9 +7,12 @@ $env.TRANSIENT_PROMPT_COMMAND = ""
 $env.PROMPT_COMMAND_RIGHT = ""
 
 $env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = {|| "·  " }
-$env.PROMPT_INDICATOR_VI_NORMAL = {|| "·· " }
-$env.PROMPT_MULTILINE_INDICATOR = {|| ":: " }
+# $env.PROMPT_INDICATOR_VI_INSERT = {|| "·  " }
+# $env.PROMPT_INDICATOR_VI_NORMAL = {|| "·· " }
+# $env.PROMPT_MULTILINE_INDICATOR = {|| ":: " }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| $"(ansi grey)(ansi reset)  " }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| $"(ansi yellow)(ansi reset)  " }
+$env.PROMPT_MULTILINE_INDICATOR = {|| $"(ansi blue_bold)(ansi reset)  " }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)

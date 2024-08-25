@@ -122,8 +122,8 @@ $env.config = {
     # block, underscore, line, blink_block, blink_underscore, blink_line
     cursor_shape: {
         emacs: line
-        vi_insert: block
-        vi_normal: underscore
+        vi_insert: line
+        vi_normal: block
     }
 
     color_config: (theme)
