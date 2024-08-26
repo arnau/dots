@@ -19,6 +19,7 @@ function m.spawn_layout(name, dir)
     size = 0.40,
   })
 
+  left_pane:send_text("nu\n")
   left_pane:activate()
 end
 

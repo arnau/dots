@@ -115,11 +115,10 @@ config.keys = {
 helpers.append(config.keys, tab_keytable)
 
 local startup_config = function()
-  local project_dir = wezterm.home_dir .. "/.config/wezterm"
+  layouts.spawn_layout2("config", wezterm.home_dir .. "/.config/wezterm")
+  layouts.spawn_layout("kitchen", wezterm.home_dir .. "/kitchen")
 
-  layouts.spawn_layout2("config", project_dir)
-
-  mux.set_active_workspace("config")
+  mux.set_active_workspace("kitchen")
 end
 
 
