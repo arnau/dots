@@ -67,8 +67,8 @@ config.keys = {
   { key = "f", mods = "LEADER|CTRL", action = action.ToggleFullScreen },
 
   { key = "p", mods = "LEADER",      action = action.ActivateCommandPalette },
-  { key = "s", mods = "LEADER",      action = action.ActivateCopyMode },
-  { key = "c", mods = "LEADER",      action = action.QuickSelect },
+  { key = "c", mods = "LEADER",      action = action.ActivateCopyMode },
+  { key = "x", mods = "LEADER",      action = action.QuickSelect },
   { key = "/", mods = "LEADER",      action = action.Search("CurrentSelectionOrEmptyString") },
   { key = "z", mods = "LEADER",      action = action.TogglePaneZoomState },
 
@@ -79,8 +79,26 @@ config.keys = {
   { key = "n", mods = "CMD",         action = action.SpawnWindow },
 
   -- panes
-  { key = "v", mods = "LEADER",      action = action.SplitHorizontal { domain = "CurrentPaneDomain" } },
-  { key = "x", mods = "LEADER",      action = action.SplitVertical { domain = "CurrentPaneDomain" } },
+  -- { key = "v", mods = "LEADER",      action = action.SplitHorizontal { domain = "CurrentPaneDomain" } },
+  -- { key = "x", mods = "LEADER",      action = action.SplitVertical { domain = "CurrentPaneDomain" } },
+  {
+    key = "v",
+    mods = "LEADER",
+    action = wezterm.action.SplitPane {
+      direction = "Right",
+      command = { args = { "fish", "--interactive", "--login" } },
+      size = { Percent = 50 },
+    },
+  },
+  {
+    key = "s",
+    mods = "LEADER",
+    action = wezterm.action.SplitPane {
+      direction = "Down",
+      command = { args = { "fish", "--interactive", "--login" } },
+      size = { Percent = 50 },
+    },
+  },
 
   { key = "h", mods = "LEADER",      action = action.ActivatePaneDirection("Left") },
   { key = "l", mods = "LEADER",      action = action.ActivatePaneDirection("Right") },

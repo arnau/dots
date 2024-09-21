@@ -14,10 +14,14 @@ end
 
 
 local keytable = {
-  { key = "t", mods = "CMD",    action = action.SpawnTab("CurrentPaneDomain") },
   { key = "n", mods = "LEADER|CTRL",    action = action.SpawnCommandInNewTab({
     label = "Start a nu shell",
     args = { "nu" },
+  }) },
+  -- { key = "t", mods = "CMD",    action = action.SpawnTab("CurrentPaneDomain") },
+  { key = "t", mods = "CMD",    action = action.SpawnCommandInNewTab({
+    label = "Start a fish shell",
+    args = { "fish", "--interactive", "--login" },
   }) },
   { key = "w", mods = "CMD",    action = action.CloseCurrentTab({ confirm = true }) },
   { key = "t", mods = "LEADER", action = action.ShowTabNavigator },
