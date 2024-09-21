@@ -13,9 +13,10 @@ fpath+=~/.config/zfunc
 autoload -Uz compinit
 compinit
 
-source "$HOME/.dots/zsh/aliases.zsh"
-source "$HOME/.dots/zsh/docker.zsh"
-source "$HOME/.dots/zsh/key-bindings.zsh"
-source "$HOME/.dots/zsh/profile.zsh"
-source "$HOME/.dots/zsh/prompt.zsh"
+alias vim=nvim
 
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+export EDITOR="hx"
+export PAGER="less"
