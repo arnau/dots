@@ -32,6 +32,8 @@ export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 export MANPATH="$MANPATH:/usr/local/man"
 set BREW_PREFIX "$(brew --prefix)"
 
+brew shellenv | source
+
 # Force nushell to look here instead.
 export XDG_CONFIG_HOME="$HOME/.config"
 
