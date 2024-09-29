@@ -125,8 +125,8 @@ export module ddb {
       }
 
       $in
-      | to csv
-      | duckdb -c $"copy \(select * from read_csv\('/dev/stdin'\)\) to '($filename)' \(format '($format)'\)"
+      | to json
+      | duckdb -c $"copy \(select * from read_json\('/dev/stdin'\)\) to '($filename)' \(format '($format)'\)"
   }
 
   # Shows the DuckDB version

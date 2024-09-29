@@ -127,7 +127,6 @@ $env.config = {
     }
 
     color_config: (theme)
-    use_grid_icons: true
     footer_mode: 25 # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
     buffer_editor: "" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
@@ -163,6 +162,10 @@ $env.config = {
         reset_application_mode: true
     }
     render_right_prompt_on_last_line: false
+    display_errors: {
+        exit_code: false
+        termination_signal: false
+    }
 
     menus: [
         # Configuration for default nushell menus
@@ -228,14 +231,20 @@ $env.config.hooks = {
                 }
                 {
                     # Attempt to load sea.nu when inside the cellar.
-                    condition: { |before, after| $after =~ "cellar$" and "sea" not-in (overlay list) }
+                    condition: {|before, after| $after =~ "cellar$" and "sea" not-in (overlay list) }
                     code: "overlay use toolbox/sea.nu; use ddb"
                 }
                 {
-                    condition: {|before, after|
-                        ($after !~ "cellar$" and "sea" in (overlay list))
-                    }
+                    condition: {|before, after| ($after !~ "cellar$" and "sea" in (overlay list)) }
                     code: "overlay hide sea --keep-env [ PWD ]"
+                }
+                {
+                    condition: {|before, after| (".dial.nu" | path exists) }
+                    code: "use .dial.nu; .dial load"
+                }
+                {
+                    condition: {|before, after| (not (".dial.nu" | path exists)) }
+                    code: "try { .dial unload; hide .dial }"
                 }
         ]
     }

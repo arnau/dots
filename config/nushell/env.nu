@@ -10,7 +10,11 @@ $env.PROMPT_INDICATOR = ""
 # $env.PROMPT_INDICATOR_VI_INSERT = {|| "·  " }
 # $env.PROMPT_INDICATOR_VI_NORMAL = {|| "·· " }
 # $env.PROMPT_MULTILINE_INDICATOR = {|| ":: " }
-$env.PROMPT_INDICATOR_VI_INSERT = {|| $"(ansi grey)(ansi reset)  " }
+$env.PROMPT_INDICATOR_VI_INSERT = {||
+    let colour = if ($env.LAST_EXIT_CODE == 1) { ansi red } else { ansi grey }
+
+    $"($colour)(ansi reset)  " 
+}
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| $"(ansi yellow)(ansi reset)  " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| $"(ansi blue_bold)(ansi reset)  " }
 
@@ -56,5 +60,11 @@ $env.HOME_CONFIG = ($env.HOME | path join ".config")
 
 # External tools
 $env.RYE_HOME = ($env.HOME | path join ".rye")
+
+$env.GITHUB_TOKEN_OP = "op://Private/github_token/token"
+
+$env.JIRA_TOKEN_OP = "op://Private/seachess_jira_token/credential"
+$env.JIRA_USERNAME_OP = "op://Private/erdzhl2pumptm5lzovftkldqeq/username"
+$env.JIRA_BASEURL_OP = "op://Private/seachess_jira_token/hostname"
 
 export use std
