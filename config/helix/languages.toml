@@ -3,6 +3,18 @@ name = "rust"
 auto-format = true
 
 [[language]]
+name = "toml"
+# PATCH: (2024-08-16) Helix upstream is already fixed.
+language-servers = ["taplo-lsp"]
+auto-format = true
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[language-server.taplo-lsp]
+command = "taplo"
+args = ["lsp", "--no-auto-config", "stdio"]
+
+
+[[language]]
 name = "csv"
 scope = "source.csv"
 file-types = ["csv"]
@@ -19,6 +31,11 @@ source = { git = "https://github.com/arnau/tree-sitter-csv", rev = "main" }
 name = "lua"
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
+language-servers = ["test"]
+
+[language-server.test]
+command = "/Users/arnau/kitchen/lua_tower_lsp/target/debug/lua_tower_lsp"
+# args = []
 
 [[language]]
 name = "fennel"

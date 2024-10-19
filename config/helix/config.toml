@@ -6,6 +6,7 @@ line-number = "relative"
 cursorline = true
 bufferline = "never"
 color-modes = true
+# shell = ["nu", "--login", "--stdin", "--no-newline", "-c"]
 
 [editor.cursor-shape]
 insert = "bar"
