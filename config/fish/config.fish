@@ -1,20 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-    set -gx SHELL fish
-
-    # Prompt
-    starship init fish | source
-
-    # Navigation
-    eval "$(zoxide init fish)"
-
-    # Fuzzy search
-    fzf --fish | source
-    # Skim
-    export SKIM_DEFAULT_COMMAND='rg --color=always --files --hidden --follow --glob "!.git/*"'
-    # sk --ansi -i -c 'rg --color=always --line-number "{}"'
-end
-
 function path_add --description "Prepends value if it doesn't exist"
     for item in $argv
         if not contains $item $PATH
@@ -28,6 +11,8 @@ export EDITOR="hx"
 export PAGER="less"
 
 # Homebrew
+path_add /opt/homebrew/bin
+
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 export MANPATH="$MANPATH:/usr/local/man"
 set BREW_PREFIX "$(brew --prefix)"
@@ -65,3 +50,20 @@ path_add "$HOME/.luarocks/bin"
 path_add "$HOME/bin"
 path_add "$HOME/.local/bin"
 export MANPATH="$MANPATH:$HOME/.local/share/man"
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    set -gx SHELL fish
+
+    # Prompt
+    starship init fish | source
+
+    # Navigation
+    eval "$(zoxide init fish)"
+
+    # Fuzzy search
+    fzf --fish | source
+    # Skim
+    export SKIM_DEFAULT_COMMAND='rg --color=always --files --hidden --follow --glob "!.git/*"'
+    # sk --ansi -i -c 'rg --color=always --line-number "{}"'
+end
