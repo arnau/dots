@@ -84,7 +84,13 @@ export module ddb {
 
     let options = $flags | where value == true | get flag | str join ' '
 
-    ^duckdb $options -jsonlines -c $command  $filename
+    let res = ^duckdb $options -jsonlines -c "set errors_as_json" -c $command  $filename | complete
+
+    if ($res.exit_code == 1) {
+        return ($res.stderr | str substring 7.. | from json)
+    }
+
+    $res.stdout
     | lines
     | each { from json }
   }
@@ -124,9 +130,11 @@ export module ddb {
           $e => $e
       }
 
+      let from_stdin = "(select * from read_json('/dev/stdin'))"
+
       $in
       | to json
-      | duckdb -c $"copy \(select * from read_json\('/dev/stdin'\)\) to '($filename)' \(format '($format)'\)"
+      | duckdb -c $"copy ($from_stdin) to '($filename)' \(format '($format)'\)"
   }
 
   # Shows the DuckDB version
