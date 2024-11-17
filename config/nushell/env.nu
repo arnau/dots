@@ -33,9 +33,40 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
+$env.EDITOR = "hx"
+$env.VISUAL = "hx"
+
+#start:me
+$env.KITCHEN_HOME = ($env.HOME | path join "kitchen")
+#end:me
+
+#start:home
+$env.HOME_CACHE = ($env.HOME | path join ".cache")
+$env.HOME_CONFIG = ($env.HOME | path join ".config")
+#end:home
+
+#start:macos_apps
+$env.BOOKS_HOME = $"($env.HOME)/Library/Containers/com.apple.iBooksX/Data/Documents"
+$env.FIREFOX_HOME = $"($env.HOME)/Library/Application Support/Firefox/Profiles/ynmd11dc.default-release"
+$env.HOME_LIB = ($env.HOME | path join "Library/Application Support")
+#end:macos_apps
+
+# start:external_tools
+$env.RYE_HOME = ($env.HOME | path join ".rye")
+
+$env.GITHUB_TOKEN_OP = "op://Private/github_token/token"
+
+$env.JIRA_TOKEN_OP = "op://Private/seachess_jira_token/credential"
+$env.JIRA_USERNAME_OP = "op://Private/erdzhl2pumptm5lzovftkldqeq/username"
+$env.JIRA_BASEURL_OP = "op://Private/seachess_jira_token/hostname"
+# end:external_tools
+
 # Directories to search for scripts when calling source or use
 $env.NU_LIB_DIRS = [
     # ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+
+    # pit module
+    ($env.KITCHEN_HOME | path join "pit")
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -45,26 +76,5 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-
-$env.EDITOR = "hx"
-$env.VISUAL = "hx"
-
-# Where the Books.app data lays.
-$env.BOOKS_HOME = $"($env.HOME)/Library/Containers/com.apple.iBooksX/Data/Documents"
-$env.FIREFOX_HOME = $"($env.HOME)/Library/Application Support/Firefox/Profiles/ynmd11dc.default-release"
-
-
-$env.HOME_LIB = ($env.HOME | path join "Library/Application Support")
-$env.HOME_CACHE = ($env.HOME | path join ".cache")
-$env.HOME_CONFIG = ($env.HOME | path join ".config")
-
-# External tools
-$env.RYE_HOME = ($env.HOME | path join ".rye")
-
-$env.GITHUB_TOKEN_OP = "op://Private/github_token/token"
-
-$env.JIRA_TOKEN_OP = "op://Private/seachess_jira_token/credential"
-$env.JIRA_USERNAME_OP = "op://Private/erdzhl2pumptm5lzovftkldqeq/username"
-$env.JIRA_BASEURL_OP = "op://Private/seachess_jira_token/hostname"
 
 export use std

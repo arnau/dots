@@ -57,7 +57,7 @@ $env.config = {
         trim: {
             methodology: wrapping # wrapping or truncating
             wrapping_try_keep_words: true # A strategy used by the 'wrapping' methodology
-            truncating_suffix: "..." # A suffix used by the 'truncating' methodology
+            truncating_suffix: "…" # A suffix used by the 'truncating' methodology
         }
         header_on_separator: false
     }
@@ -232,11 +232,13 @@ $env.config.hooks = {
                 {
                     # Attempt to load sea.nu when inside the cellar.
                     condition: {|before, after| $after =~ "cellar$" and "sea" not-in (overlay list) }
-                    code: "overlay use toolbox/sea.nu; use ddb"
+                    # code: "overlay use toolbox/sea.nu; use ddb"
+                    code: "overlay use pit; use ddb"
                 }
                 {
                     condition: {|before, after| ($after !~ "cellar$" and "sea" in (overlay list)) }
-                    code: "overlay hide sea --keep-env [ PWD ]"
+                    # code: "overlay hide sea --keep-env [ PWD ]"
+                    code: "overlay hide pit --keep-env [ PWD ]"
                 }
                 {
                     condition: {|before, after| (".dial.nu" | path exists) }
