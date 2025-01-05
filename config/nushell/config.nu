@@ -583,6 +583,7 @@ source ($nu.config-path | path dirname | path join "zoxide.nu")
 source ($nu.config-path | path dirname | path join "cargo.nu")
 source ($nu.config-path | path dirname | path join "git.nu")
 source ($nu.config-path | path dirname | path join "brew.nu")
+source ($nu.config-path | path dirname | path join "diec.nu")
 
 export use ($nu.config-path | path dirname | path join "testing.nu")
 
