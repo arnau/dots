@@ -1,0 +1,143 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-z": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // surrounding
+      "m m": "vim::Matching",
+      "m d": ["vim::PushOperator", "DeleteSurrounds"],
+      "m r": ["vim::PushOperator", { "ChangeSurrounds": {} }],
+      "m s": ["vim::PushOperator", { "AddSurrounds": {} }],
+
+      // go-to
+      "g e": "vim::EndOfDocument",
+
+      "g d": "vim::ScrollDown",
+      "g u": "vim::ScrollUp",
+
+      "g h": "editor::MoveToBeginningOfLine",
+      "g j": "vim::EndOfDocument",
+      "g k": "vim::StartOfDocument",
+      "g l": "editor::MoveToEndOfLine",
+      "g shift-l": null,
+
+      "g s": "vim::SelectNext",
+      "g shift-s": "vim::SelectPrevious",
+
+      // go-to window
+      "g w t": "vim::WindowTop",
+      "g w m": "vim::WindowMiddle",
+      "g w b": "vim::WindowBottom",
+
+      // global
+      "space /": "pane::DeploySearch",
+      "space ]": ["vim::MoveToNext", { "partialWord": true }],
+      "space [": ["vim::MoveToPrev", { "partialWord": true }],
+
+      "space a": "editor::ToggleCodeActions",
+      "space c": "editor::ToggleComments",
+      "space f": "file_finder::Toggle",
+      "space h": "editor::Hover",
+      "space i": "editor::ToggleInlayHints",
+
+      "space o": "outline::Toggle",
+      "space shift-o": "project_symbols::Toggle",
+      "space s": null,
+      "space shift-s": null,
+      "space r": "editor::Rename",
+      "space t": "workspace::ToggleBottomDock",
+      "space w": "editor::ToggleSoftWrap",
+      "space z": "workspace::ToggleZoom",
+      "space space h": "workspace::ToggleLeftDock",
+      "space space j": "workspace::ToggleBottomDock",
+      "space space l": "workspace::ToggleRightDock",
+
+      "space g d": "editor::GoToDefinition",
+      "space g shift-d": "editor::GoToDefinitionSplit",
+      "space g e": "editor::GoToDeclaration",
+      "space g shift-e": "editor::GoToDeclarationSplit",
+      "space g i": "editor::GoToImplementation",
+      "space g shift-i": "editor::GoToImplementationSplit",
+      "space g t": "editor::GoToTypeDefinition",
+      "space g shift-t": "editor::GoToTypeDefinitionSplit",
+
+      // markdown specific actions
+      "space m p": "markdown::OpenPreviewToTheSide",
+
+      // assistant actions
+      "space a t": "assistant::ToggleFocus",
+
+      // marks
+      "ctrl-m": ["vim::PushOperator", "Mark"],
+
+      // visual
+      ";": "vim::ToggleVisual",
+
+      // unmaps
+      "ctrl-j": null,
+      "ctrl-k": null,
+      "+": null,
+      "-": null,
+      "_": null,
+      "*": null,
+      "#": null,
+      "g _": null,
+      "g /": null,
+      "s": null,
+      "ctrl-w d": null,
+      "ctrl-w g d": null,
+      "ctrl-w shift-d": null,
+      "ctrl-w g shift-d": null,
+      "ctrl-w space": null,
+      "ctrl-w g space": null
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "g h": "editor::SelectToBeginningOfLine",
+      "g j": "editor::SelectToEnd",
+      "g k": "editor::SelectToBeginning",
+      "g l": "editor::SelectToEndOfLine"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "u": "vim::Undo",
+      "shift-u": "vim::Redo",
+
+      "ctrl-a": null,
+      "ctrl-r": null,
+      "ctrl-x": null
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "space k l": "vim::ConvertToLowerCase",
+      "space k u": "vim::ConvertToUpperCase"
+    }
+  }
+]

@@ -8,6 +8,7 @@ const my_config_allow_list = [
   tree-sitter
   vivid
   wezterm
+  zed
 ]
 
 def "nu-complete my-config-tools" [] {
