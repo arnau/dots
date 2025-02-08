@@ -55,7 +55,7 @@ export def today []: [nothing -> record] {
     let stamp = date now
 
     $stamp
-    | date to-record
+    | into record
     | insert weeknumber { $stamp | _my to-weeknumber }
     | insert weekday { $stamp | format date "%A" }
     | insert timestamp { $stamp | format date "%s" | into int | $in * 1_000_000_000 }
