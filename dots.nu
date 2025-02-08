@@ -51,7 +51,7 @@ export def "dots bootstrap" [] {
 
 # Pull installed brews into the catalogue.
 export def "dots brew pull" [] {
-  brew dump
+  infuse dump
   | save -f catalogue/brew.csv
 }
 

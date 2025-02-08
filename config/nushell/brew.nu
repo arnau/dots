@@ -1,5 +1,5 @@
 
-def "brew info" []: [list<string> -> table] {
+def "infuse info" []: [list<string> -> table] {
   let packages = (^brew info -q --json=v2 ...($in) | from json)
 
   let formulae = ($packages.formulae | select full_name desc | rename name summary)
@@ -9,7 +9,7 @@ def "brew info" []: [list<string> -> table] {
 }
 
 # Dumps the list of taps, formulae and casks pulling in their description.
-def "brew dump" [] {
+def "infuse dump" [] {
   let brewfile = ^brew bundle dump -q --file=- | lines | parse "{type} \"{name}\""
 
   $brewfile
@@ -21,7 +21,7 @@ def "brew dump" [] {
 # ```nushell
 # open catalogue/brew.csv | brew assemble | save Brewfile
 # ```
-def "brew assemble" [] {
+def "infuse assemble" [] {
   $in
   | select type name
   | each { |row| $"($row.type) ($row.name)" }
