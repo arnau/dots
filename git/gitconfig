@@ -1,20 +1,20 @@
 [user]
   name = Arnau Siches
-  email = arnau@seachess.net
+  email = 33837+arnau@users.noreply.github.com
 
 [alias]
   active = rev-parse --abbrev-ref HEAD
   amend = ci --amend
   slurp = ci --amend --no-edit
   b = branch
-  ci = commit -s
+  ci = commit -sS
   co = checkout
   dlog = log --oneline --decorate
   dump = cat-file -p
   fiff = diff --name-status
   flog = log --name-status --oneline
   fuzzlog = !git log --oneline --shortstat --quiet | fzf -e
-  gl = log --graph --date=short     --pretty=format:\"%C(red)%h%Creset %C(green)%ad%Creset %s%C(yellow) %D%Creset %C(bold blue)%G? %aN <%ae>%Creset\"
+  gl = log --graph --date=short --pretty=format:\"%C(red)%h%Creset %C(green)%ad%Creset %s%C(yellow) %D%Creset %C(bold blue)%G? %aN <%ae>%Creset\"
   dl = log --graph --date=short --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(blue)%ad%C(reset) %C(dim white)%ae%C(reset) %C(auto)%d%C(reset) %C(normal)%s%C(reset)'
   ls = ls-files
   lst = diff-tree --no-commit-id --name-only -r
@@ -48,7 +48,14 @@
   diffFilter = delta --color-only
 
 [push]
-  default = tracking
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
 
 [pull]
   rebase = true
@@ -56,8 +63,14 @@
 [init]
   defaultBranch = main
 
+[branch]
+  sort = -commiterdate
+
 [diff]
   algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
 
 [diff "sqlite3"]
   binary = true
@@ -71,3 +84,4 @@
 
 [commit]
   gpgsign = true
+  verbose = true
