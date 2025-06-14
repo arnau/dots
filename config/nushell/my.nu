@@ -37,7 +37,7 @@ export def "date to-weeknumber" [
         "int" | "list<int>" => {
             $input | into datetime | _my to-weeknumber
         },
-        "date" => {
+        "datetime" => {
             $input | _my to-weeknumber
         },
     }
