@@ -230,12 +230,12 @@ $env.config.hooks = {
                 }
                 {
                     # Attempt to load sea.nu when inside the cellar.
-                    condition: {|before, after| $after =~ "cellar$" and "sea" not-in (overlay list) }
+                    condition: {|before, after| $after =~ "cellar$" and "sea" not-in (overlay list | get name) }
                     # code: "overlay use toolbox/sea.nu; use ddb"
                     code: "overlay use pit; use ddb"
                 }
                 {
-                    condition: {|before, after| ($after !~ "cellar$" and "sea" in (overlay list)) }
+                    condition: {|before, after| ($after !~ "cellar$" and "sea" in (overlay list | get name)) }
                     # code: "overlay hide sea --keep-env [ PWD ]"
                     code: "overlay hide pit --keep-env [ PWD ]"
                 }
