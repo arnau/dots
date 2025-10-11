@@ -13,20 +13,25 @@
   },
   "theme": "Sea Salt Dark",
   "vim_mode": true,
+  "helix_mode": true,
+  "vim": { "default_mode": "normal" },
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_size": null,
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware",
     "background_coloring": "disabled"
   },
+  // "project_panel": {
+  //   "file_icons": false
+  // },
   "toolbar": {
     // Whether to show breadcrumbs.
     "breadcrumbs": true,
     // Whether to show quick action buttons.
-    "quick_actions": false,
+    "quick_actions": true,
     // Whether to show the Selections menu in the editor toolbar
-    "selections_menu": false
+    "selections_menu": true
   },
   "multi_cursor_modifier": "cmd_or_ctrl",
   "hover_popover_enabled": false,
@@ -34,7 +39,7 @@
     "enabled": true
   },
   "features": {
-    "inline_completion_provider": "zed"
+    "edit_prediction_provider": "zed"
   },
   "tab_bar": {
     // Whether or not to show the tab bar in the editor
@@ -42,12 +47,12 @@
     // Whether or not to show the navigation history buttons.
     "show_nav_history_buttons": true
   },
-  "assistant": {
-    "version": "2",
+  "agent": {
+    "default_profile": "write",
     "button": false,
     "default_model": {
-      "provider": "ollama",
-      "model": "qwen2.5-coder"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     }
   },
   "language_models": {
@@ -55,11 +60,57 @@
       "api_url": "http://localhost:11434",
       "available_models": [
         {
-          "name": "qwen2.5-coder",
-          "display_name": "qwen 2.5 coder 32K",
+          "name": "qwen2.5-coder:14b",
           "max_tokens": 32768
         }
       ]
+    }
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "preferences": {
+            "importModuleSpecifier": "non-relative",
+            "includePackageJsonAutoImports": "auto"
+          }
+        }
+      }
+    },
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "strict"
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "terminal": {
+    "shell": {
+      "program": "/opt/homebrew/bin/fish"
+    },
+    "detect_venv": {
+      "on": {
+        "directories": [".venv"],
+        "activate_script": "fish"
+      }
     }
   }
 }

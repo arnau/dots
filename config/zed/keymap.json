@@ -9,16 +9,16 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"]
+      "ctrl-a h": "workspace::ActivatePaneLeft",
+      "ctrl-a j": "workspace::ActivatePaneDown",
+      "ctrl-a k": "workspace::ActivatePaneUp",
+      "ctrl-a l": "workspace::ActivatePaneRight"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-z": "workspace::ToggleZoom"
+      "ctrl-a z": "workspace::ToggleZoom"
     }
   },
   {
@@ -26,9 +26,10 @@
     "bindings": {
       // surrounding
       "m m": "vim::Matching",
-      "m d": ["vim::PushOperator", "DeleteSurrounds"],
-      "m r": ["vim::PushOperator", { "ChangeSurrounds": {} }],
-      "m s": ["vim::PushOperator", { "AddSurrounds": {} }],
+      "m d": "vim::PushDeleteSurrounds",
+      "m r": ["vim::PushChangeSurrounds", {}],
+      //"m s": ["vim::PushAddSurrounds", {}],
+      "m s": "vim::PushAddSurrounds",
 
       // go-to
       "g e": "vim::EndOfDocument",
@@ -36,10 +37,10 @@
       "g d": "vim::ScrollDown",
       "g u": "vim::ScrollUp",
 
-      "g h": "editor::MoveToBeginningOfLine",
-      "g j": "vim::EndOfDocument",
-      "g k": "vim::StartOfDocument",
-      "g l": "editor::MoveToEndOfLine",
+      // "g h": "editor::MoveToBeginningOfLine",
+      // "g j": "vim::EndOfDocument",
+      // "g k": "vim::StartOfDocument",
+      // "g l": "editor::MoveToEndOfLine",
       "g shift-l": null,
 
       "g s": "vim::SelectNext",
@@ -52,8 +53,8 @@
 
       // global
       "space /": "pane::DeploySearch",
-      "space ]": ["vim::MoveToNext", { "partialWord": true }],
-      "space [": ["vim::MoveToPrev", { "partialWord": true }],
+      "space ]": ["vim::MoveToNext", { "partial_word": true }],
+      "space [": ["vim::MoveToPrevious", { "partial_word": true }],
 
       "space a": "editor::ToggleCodeActions",
       "space c": "editor::ToggleComments",
@@ -86,10 +87,10 @@
       "space m p": "markdown::OpenPreviewToTheSide",
 
       // assistant actions
-      "space a t": "assistant::ToggleFocus",
+      "space a t": "agent::ToggleFocus",
 
       // marks
-      "ctrl-m": ["vim::PushOperator", "Mark"],
+      "ctrl-m": "vim::PushMark",
 
       // visual
       ";": "vim::ToggleVisual",
