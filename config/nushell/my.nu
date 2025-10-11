@@ -44,6 +44,17 @@ export def "date to-weeknumber" [
 }
 
 
+# Like `$date | into record` but with weeknumber added.
+export def "date split" [] {
+    let input = $in
+
+    $input
+    | into record
+    | insert week { $input | date to-weeknumber }
+    
+}
+
+
 # Like `describe` but dropping item types for collections.
 export def describe-primitive []: any -> string {
   $in | describe | str replace --regex '<.*' ''
