@@ -132,17 +132,8 @@ config.keys = {
 -- tabs
 helpers.append(config.keys, tab_keytable)
 
-local startup_config = function()
-  layouts.spawn_layout2("config", wezterm.home_dir .. "/.config/wezterm")
-  layouts.spawn_layout("kitchen", wezterm.home_dir .. "/kitchen")
-
-  mux.set_active_workspace("kitchen")
-end
-
 
 -- Events
-
-wezterm.on("gui-startup", startup_config)
 
 wezterm.on("update-status", function(window, pane)
   window:set_right_status(statusline.mode_status(window, pane))

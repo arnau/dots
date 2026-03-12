@@ -1,20 +1,4 @@
 [[language]]
-name = "rust"
-auto-format = true
-
-[[language]]
-name = "toml"
-# PATCH: (2024-08-16) Helix upstream is already fixed.
-language-servers = ["taplo-lsp"]
-auto-format = true
-formatter = { command = "taplo", args = ["fmt", "-"] }
-
-[language-server.taplo-lsp]
-command = "taplo"
-args = ["lsp", "--no-auto-config", "stdio"]
-
-
-[[language]]
 name = "csv"
 scope = "source.csv"
 file-types = ["csv"]
@@ -33,23 +17,6 @@ auto-format = true
 indent = { tab-width = 2, unit = "  " }
 language-servers = ["test"]
 
-[language-server.test]
-command = "/Users/arnau/kitchen/lua_tower_lsp/target/debug/lua_tower_lsp"
-# args = []
-
-[[language]]
-name = "fennel"
-scope = "source.fennel"
-file-types = ["fnl"]
-comment-token = ";"
-indent = { tab-width = 2, unit = "  " }
-grammar = "scheme"
-roots = []
-
-[[grammar]]
-name = "fennel"
-source = { git = "https://github.com/travonted/tree-sitter-fennel", rev = "master" }
-
 [[language]]
 name = "nu"
 auto-format = true
@@ -58,25 +25,3 @@ indent = { tab-width = 4, unit = "    " }
 [[grammar]]
 name = "nu"
 source = { git = "https://github.com/nushell/tree-sitter-nu", rev = "main" }
-
-# [[language]]
-# name = "typescript"
-# shebangs = ["deno"]
-# roots = ["deno.json", "deno.jsonc"]
-# auto-format = true
-# language-servers = ["deno-lsp"]
-
-# [language-server.deno-lsp]
-# command = "deno"
-# args = ["lsp"]
-
-# [language-server.deno-lsp.config.deno]
-# enable = true
-# unstable = true
-# suggest.imports.hosts = { "https://deno.land" = true }
-# inlayHints.parameterNames.enabled = "all"
-# inlayHints.parameterTypes.enabled = true
-# inlayHints.variableTypes.enabled = true
-# inlayHints.propertyDeclarationTypes.enabled  = true
-# inlayHints.functionLikeReturnTypes.enabled = true
-# inlayHints.enumMemberValues.enabled = true
