@@ -21,7 +21,7 @@ export def main [] {
       list: white
       block: white
       hints: dark_gray
-      search_result: {bg: red fg: white}    
+      search_result: {bg: yellow fg: black}    
       shape_and: purple
       shape_binary: purple
       shape_block: blue_bold
@@ -35,7 +35,7 @@ export def main [] {
       shape_filepath: light_cyan
       shape_flag: cyan
       shape_float: purple
-      shape_garbage: { fg: white bg: red attr: b}
+      shape_garbage: { bg: black fg: red}
       shape_globpattern: cyan_bold
       shape_int: purple
       shape_internalcall: cyan_bold
