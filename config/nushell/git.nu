@@ -45,11 +45,11 @@ def --wrapped "git log" [
 ] {
   if $help { return (help git log) }
 
-  const template = "%h\t{name: \"%an\", email: \"%ae\", date: \"%as\"}\t{name: \"%cn\", email: \"%ce\", date: \"%cI\"}\t[%(decorate:prefix=,suffix=,pointer=>)]\t%s"
-  const columns = [hash author committer refs subject]
+  const template = "%h\t{name: \"%an\", email: \"%ae\", date: \"%as\"}\t{name: \"%cn\", email: \"%ce\", date: \"%cI\"}\t[%(decorate:prefix=,suffix=,pointer=>)]\t%s\t\"%b\""
+  const columns = [hash author committer refs subject body]
 
   ^git log --pretty=($template) ...$rest
-  | from csv -s "\t" -n
+  | from csv -s "\t" --noheaders --no-infer 
   | rename ...$columns
   | update author { from nuon }
   | update committer { from nuon }
