@@ -81,10 +81,10 @@ export module ddb {
   # Executes the given command against the given database.
   #
   # ```
-  # ddb run "select * from 'foo.parquet'"
-  # ddb run "copy tbl from 'foo.parquet'" mydb.duckdb
+  # ddb exec "select * from 'foo.parquet'"
+  # ddb exec "copy tbl from 'foo.parquet'" mydb.duckdb
   # ```
-  export def run [
+  export def exec [
     command: string  # The query to run.
     filename: string = "" # The filename of the DuckDB database to use.
     --bail # Stop after hitting an error.
