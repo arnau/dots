@@ -378,7 +378,7 @@ $env.config.keybindings = [
         }
     }
     {
-        name: move_down
+        name: move_down_vi
         modifier: control
         keycode: char_j
         mode: [emacs, vi_normal, vi_insert]
@@ -390,7 +390,7 @@ $env.config.keybindings = [
         }
     }
     {
-        name: move_left
+        name: move_left_vi
         modifier: control
         keycode: char_l
         mode: [emacs, vi_normal, vi_insert]
@@ -402,7 +402,7 @@ $env.config.keybindings = [
         }
     }
     {
-        name: move_right
+        name: move_right_vi
         modifier: control
         keycode: char_h
         mode: [emacs, vi_normal, vi_insert]
@@ -422,7 +422,7 @@ $env.config.keybindings = [
         event: null
     }
     {
-        name: move_one_word_right_or_take_history_hint
+        name: move_one_word_right_or_take_history_hint_r
         modifier: control
         keycode: right
         mode: [emacs, vi_normal, vi_insert]
@@ -442,14 +442,14 @@ $env.config.keybindings = [
         event: {edit: movetolinestart}
     }
     {
-        name: move_to_line_start
+        name: move_to_line_start_a
         modifier: control
         keycode: char_a
         mode: [emacs, vi_normal, vi_insert]
         event: {edit: movetolinestart}
     }
     {
-        name: move_to_line_end_or_take_history_hint
+        name: move_to_line_end_or_take_history_hint_end
         modifier: none
         keycode: end
         mode: [emacs, vi_normal, vi_insert]
@@ -473,7 +473,7 @@ $env.config.keybindings = [
         }
     }
     {
-        name: move_to_line_start
+        name: move_to_line_start_home
         modifier: control
         keycode: home
         mode: [emacs, vi_normal, vi_insert]
@@ -487,7 +487,7 @@ $env.config.keybindings = [
         event: {edit: movetolineend}
     }
     {
-        name: move_up
+        name: move_up_p
         modifier: control
         keycode: char_p
         mode: [emacs, vi_normal, vi_insert]
@@ -533,14 +533,14 @@ $env.config.keybindings = [
         event: {edit: delete}
     }
     {
-        name: delete_one_character_forward
+        name: delete_one_character_forward_d
         modifier: control
         keycode: delete
         mode: [emacs, vi_insert]
         event: {edit: delete}
     }
     {
-        name: delete_one_word_backward
+        name: delete_one_word_backward_w
         modifier: control
         keycode: char_w
         mode: [emacs, vi_insert]
@@ -554,14 +554,14 @@ $env.config.keybindings = [
         event: {edit: moveleft}
     }
     {
-        name: move_one_word_left
+        name: move_one_word_left_b
         modifier: alt
         keycode: char_b
         mode: emacs
         event: {edit: movewordleft}
     }
     {
-        name: move_one_word_right_or_take_history_hint
+        name: move_one_word_right_or_take_history_hint_f
         modifier: alt
         keycode: char_f
         mode: emacs
