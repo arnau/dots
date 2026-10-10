@@ -1,41 +1,22 @@
 use ~/.config/nushell/theme.nu
 
-let carapace_completer = { |spans: list<string>|
-    if (which carapace | is-empty) {
+let carapace_completer = { |place|
+    if (^which carapace | is-empty) {
         return
     }
 
-    ^carapace $spans.0 nushell ...$spans
+    ^carapace $place.command.0 nushell ...$place.command
     | from json
-    | if ($in | default [] | where value =~ '^-.*ERR$' | is-empty) { $in } else { null }
-
 }
 
-let zoxide_completer = { |spans|
-    $spans
-    | skip 1
-    | zoxide query -l $in
-    | lines
-    | where { |x| $x != $env.PWD }
-}
 
-let cargo_completer = { |spans| 
-    return $spans
-    
-    ^cargo --list
-    | lines -s
-    | skip 1
-    | str trim
-    | split column --regex '\s\s+'
-    | rename name summary
-}
-
-let multiple_completer = { |spans|
-    match $spans.0 {
-        z | zi => $zoxide_completer
+let multiple_completer = {|place|
+    match $place.command.0 {
         _ => $carapace_completer
-    } | do $in $spans
+    } | do $in $place
 }
+
+$env.config.completions.external.completer = $multiple_completer
 
 $env.config = {
     show_banner: true
@@ -102,17 +83,18 @@ $env.config = {
         isolation: false # only available with sqlite file_format. true enables history isolation, false disables it. true will allow the history to be isolated to the current session using up/down arrows. false will allow the history to be shared across all sessions.
     }
 
-    completions: {
-        case_sensitive: false
-        quick: true # set this to false to prevent auto-selecting completions when only one remains
-        partial: true
-        algorithm: "prefix" # prefix or fuzzy
-        external: {
-            enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
-            max_results: 100
-            completer: $multiple_completer
-        }
-    }
+
+    # completions: {
+    #     case_sensitive: false
+    #     quick: true # set this to false to prevent auto-selecting completions when only one remains
+    #     partial: true
+    #     algorithm: "prefix" # prefix or fuzzy
+    #     external: {
+    #         enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
+    #         max_results: 100
+    #         completer: $multiple_completers
+    #     }
+    # }
 
     filesize: {
         unit: metric

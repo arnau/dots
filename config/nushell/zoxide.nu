@@ -22,6 +22,21 @@ if (not ($env | default false __zoxide_hooked | get __zoxide_hooked)) {
 # When using zoxide with --no-cmd, alias these internal functions as desired.
 #
 
+
+def "nu-complete zoxide path" [place: record] {
+    let parts = $place.command | skip 1
+    {
+      options: {
+        sort: false,
+        completion_algorithm: substring,
+        case_sensitive: false,
+      },
+      completions: (^zoxide query --list --exclude $env.PWD -- ...$parts | lines),
+    }
+}
+
+
+
 # Jump to a directory using only keywords.
 def --env __zoxide_z [...rest:string] {
   let arg0 = ($rest | append '~').0
@@ -38,12 +53,16 @@ def --env __zoxide_zi  [...rest:string] {
   cd $'(zoxide query --interactive -- ...$rest | str trim -r -c "\n")'
 }
 
+
+def --env --wrapped z [...rest: string@"nu-complete zoxide path"] {
+  __zoxide_z ...$rest
+}
 # =============================================================================
 # Commands for zoxide.
 # =============================================================================
 
-# like cd but with memory
-alias z = __zoxide_z
+# # like cd but with memory
+# alias z = __zoxide_z
 
 # like z but interactive
 alias zi = __zoxide_zi
